@@ -1,8 +1,8 @@
 ### My GitHub Stats
-![GitHub stats](readmestats-bir3x2ate-neilhuang007s-projects.vercel.app/api?username=neilhuang007)
+![GitHub stats](https://github-readme-stats-phi-five-60.vercel.app/api?username=neilhuang007)
 
 ### Top Languages
-![Top Langs](https://readmestats-bir3x2ate-neilhuang007s-projects.vercel.app/api/top-langs?username=neilhuang007&layout=compact)
+![Top Langs](https://github-readme-stats-phi-five-60.vercel.app/api/top-langs?username=neilhuang007&layout=compact)
 
 ### Pinned Repo
-![Readme Card](https://readmestats-ebon.vercel.app/api/pin/?username=neilhuang007&repo=REPO_NAME)
+![Readme Card](https://github-readme-stats-phi-five-60.vercel.app/api/pin/?username=neilhuang007&repo=REPO_NAME)
