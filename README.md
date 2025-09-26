@@ -1,8 +1,62 @@
 ### My GitHub Stats
-![GitHub stats](https://github-readme-stats-phi-five-60.vercel.app/api?username=neilhuang007)
 
-### Top Languages
-![Top Langs](https://github-readme-stats-phi-five-60.vercel.app/api/top-langs?username=neilhuang007&layout=compact)
+<div align="center">
 
-### Pinned Repo
-![Readme Card](https://github-readme-stats-phi-five-60.vercel.app/api/pin/?username=neilhuang007&repo=Personal-Portfolio)
+<table>
+  <tr>
+    <td>
+      <!-- Overall Stats (shows letter grade like A+ and a clean percentile ring) -->
+      <a href="https://github.com/neilhuang007">
+          <img
+            src="https://github-readme-stats.vercel.app/api?username=neilhuang007&show_icons=true&theme=transparent&hide_border=true&include_all_commits=true&count_private=true&custom_title=GitHub%20Overview&show=reviews,discussions_answered,prs_merged,prs_merged_percentage"
+            alt="GitHub stats"
+          />
+        </a>
+    </td>
+    <td>
+      <!-- Top Languages (compact, wide, minimal noise) -->
+      <a href="https://github.com/neilhuang007">
+        <img
+          src="https://github-readme-stats.vercel.app/api/top-langs/?username=neilhuang007&layout=compact&theme=transparent&hide_border=true&langs_count=8&card_width=360&hide=Jupyter%20Notebook,ShaderLab"
+          alt="Top languages"
+        />
+      </a>
+    </td>
+  </tr>
+</table>
+
+</div>
+
+> Tip: the grade/rank (S, A+, A, …) is built into **github-readme-stats** and appears automatically; the *
+*`rank_icon=percentile`** adds that subtle ring around it for a more modern look. (Refs: ranks & options in the official
+> repo.) :contentReference[oaicite:0]{index=0}
+
+### Personal website
+
+<a href="https://github.com/neilhuang007/Personal-Portfolio">
+  <img
+    src="https://github-readme-stats-phi-five-60.vercel.app/api/pin/?username=neilhuang007&repo=Personal-Portfolio&theme=transparent&hide_border=true&show_owner=true"
+    alt="Personal Portfolio repo card"
+  />
+</a>
+
+---
+
+## Contribution python
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/neilhuang007/neilhuang007/output/github-contribution-grid-snake-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/neilhuang007/neilhuang007/output/github-contribution-grid-snake.svg">
+  <img align="center" alt="github contribution grid snake animation" src="https://raw.githubusercontent.com/neilhuang007/neilhuang007/output/github-contribution-grid-snake.svg">
+</picture>
+
+---
+
+## Code Stats
+
+<!-- LANGUAGES BREAKDOWN START -->
+
+```text
+[ LANGUAGES BREAKDOWN ]
+
+[ TOTAL LINES OF CODE: — ]
