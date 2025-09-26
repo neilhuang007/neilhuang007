@@ -27,10 +27,6 @@
 
 </div>
 
-> Tip: the grade/rank (S, A+, A, …) is built into **github-readme-stats** and appears automatically; the *
-*`rank_icon=percentile`** adds that subtle ring around it for a more modern look. (Refs: ranks & options in the official
-> repo.) :contentReference[oaicite:0]{index=0}
-
 ### Personal website
 
 <a href="https://github.com/neilhuang007/Personal-Portfolio">
