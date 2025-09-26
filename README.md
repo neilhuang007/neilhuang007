@@ -51,8 +51,14 @@
 ## Code Stats
 
 <!-- LANGUAGES BREAKDOWN START -->
-
-```text
+```
 [ LANGUAGES BREAKDOWN ]
 
-[ TOTAL LINES OF CODE: — ]
+JavaScript   --> 29,715 lines
+TypeScript   --> 1,893 lines
+C#           --> 570 lines
+JSX          --> 61 lines
+Others       --> 17,922,891 lines
+
+[ TOTAL LINES OF CODE: 17,955,130 ]
+```
