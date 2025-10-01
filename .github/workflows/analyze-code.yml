@@ -30,13 +30,18 @@ jobs:
           sudo apt-get install -y jq cloc locales
           sudo locale-gen en_US.UTF-8
 
-      # Fetch public repositories (excluding forks) and clone only the default branch
+      # Fetch public repositories (all repos user has access to) and clone only the default branch
       - name: Fetch and Clone Repositories
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
         run: |
-          # Get a list of public repositories that are not forks
-          REPOS=$(curl -H "Authorization: token $GH_PAT" -s "https://api.github.com/user/repos?per_page=100" | jq -r '.[] | select(.fork == false) | .full_name') || echo "Error fetching repositories"
+          # Get GitHub username
+          GH_USER=$(curl -H "Authorization: token $GH_PAT" -s "https://api.github.com/user" | jq -r '.login')
+          echo "GitHub User: $GH_USER"
+
+          # Get a list of all repositories (owned + contributed to) that are not forks
+          # Fetch both owned repos and repos where user is a contributor
+          REPOS=$(curl -H "Authorization: token $GH_PAT" -s "https://api.github.com/user/repos?per_page=100&affiliation=owner,collaborator,organization_member" | jq -r '.[] | select(.fork == false) | .full_name') || echo "Error fetching repositories"
 
           mkdir -p public-repos
           cd public-repos
@@ -44,19 +49,45 @@ jobs:
           for REPO in $REPOS; do
             REPO_URL="https://github.com/$REPO.git"
             AUTHENTICATED_REPO=$(echo "$REPO_URL" | sed "s/https:\/\//https:\/\/$GH_PAT@/g")
-            
-            # Determine the default branch dynamically and clone only that branch
+
+            # Determine the default branch dynamically and clone full history (needed for git log analysis)
             DEFAULT_BRANCH=$(curl -H "Authorization: token $GH_PAT" -s "https://api.github.com/repos/$REPO" | jq -r '.default_branch')
 
-            # echo "Cloning $REPO (default branch: $DEFAULT_BRANCH)..."
-            git clone --quiet --branch "$DEFAULT_BRANCH" --single-branch "$AUTHENTICATED_REPO" "$(basename $REPO)-$DEFAULT_BRANCH" || echo "Failed to clone a repository"
+            echo "Cloning $REPO (default branch: $DEFAULT_BRANCH)..."
+            git clone --quiet --branch "$DEFAULT_BRANCH" "$AUTHENTICATED_REPO" "$(basename $REPO)-$DEFAULT_BRANCH" || echo "Failed to clone a repository"
           done
 
-          # Run cloc to analyze lines of code, excluding non-source code files
-          echo "Calculating lines of code..."
+          # Count only lines authored by the user
+          echo "Calculating lines of code authored by $GH_USER..."
           mkdir -p ../output
-          # Count LOC for all cloned repos; exclude languages via cloc's own --exclude-lang so totals match SUM
-          # NOTE: This does NOT apply .gitignore automatically across multiple repos; for per-repo .gitignore, run cloc per folder
+
+          # Create a temporary directory structure with only user's contributions
+          mkdir -p ../user-code
+
+          for REPO_DIR in */; do
+            echo "Processing $REPO_DIR..."
+            cd "$REPO_DIR"
+
+            # Get all files tracked by git
+            git ls-files | while read -r file; do
+              if [ -f "$file" ]; then
+                # Use git blame to count lines authored by the user
+                mkdir -p "../user-code/$REPO_DIR$(dirname "$file")"
+
+                # Extract only lines authored by the user using git blame
+                git blame --line-porcelain "$file" 2>/dev/null | \
+                  awk -v user="$GH_USER" '
+                    /^author / { author=$0; sub(/^author /, "", author) }
+                    /^\t/ { if (author == user) print substr($0, 2) }
+                  ' > "../user-code/$REPO_DIR$file" 2>/dev/null || true
+              fi
+            done
+
+            cd ..
+          done
+
+          # Run cloc on user-authored code only
+          cd ../user-code
           cloc . --json --report-file=../output/cloc-output.json --exclude-lang="${IGNORE_LANGS}"
 
       # Commit and push the updated cloc-output.json and README.md to the current branch
@@ -84,17 +115,18 @@ jobs:
 
           OTHER_LINES=0
           FORMATTED_BREAKDOWN=""
+          declare -A LANG_LINES
 
           # Normalize the highlight list for exact, comma-bounded matching (no false partial matches)
           HL=",$(echo "$HIGHLIGHT_LANGS" | tr -d ' '),"
 
+          # First pass: collect all language data
           while read -r entry; do
             LANG=$(echo "$entry" | jq -r '.lang')
             LINES=$(echo "$entry" | jq -r '.lines')
 
             if [[ "$HL" == *",$LANG,"* ]]; then
-              FORMATTED=$(format_number "$LINES")
-              FORMATTED_BREAKDOWN+=$(printf "%-12s --> %s lines\n" "$LANG" "$FORMATTED")$'\n'
+              LANG_LINES["$LANG"]="$LINES"
             else
               OTHER_LINES=$((OTHER_LINES + LINES))
             fi
@@ -103,8 +135,16 @@ jobs:
               | map(select(.key != "header" and .key != "SUM"))
               | map({lang: .key, lines: .value.code})
               | map(select(.lines > 0))
+              | sort_by(-.lines)
               | .[]' output/cloc-output.json
           )
+
+          # Second pass: sort languages by line count (descending) and format
+          for LANG in $(for key in "${!LANG_LINES[@]}"; do echo "$key ${LANG_LINES[$key]}"; done | sort -rn -k2 | cut -d' ' -f1); do
+            LINES="${LANG_LINES[$LANG]}"
+            FORMATTED=$(format_number "$LINES")
+            FORMATTED_BREAKDOWN+=$(printf "%-12s --> %s lines\n" "$LANG" "$FORMATTED")$'\n'
+          done
 
           # "Others" includes all non-highlighted languages that cloc reported (after --exclude-lang); excluded ones never reach here
           if [[ $OTHER_LINES -gt 0 ]]; then
