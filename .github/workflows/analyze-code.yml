@@ -35,12 +35,14 @@ jobs:
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
         run: |
-          # Get GitHub username
-          GH_USER=$(curl -H "Authorization: token $GH_PAT" -s "https://api.github.com/user" | jq -r '.login')
+          # Get GitHub user info
+          USER_DATA=$(curl -H "Authorization: token $GH_PAT" -s "https://api.github.com/user")
+          GH_USER=$(echo "$USER_DATA" | jq -r '.login')
+          GH_EMAIL=$(echo "$USER_DATA" | jq -r '.email // empty')
           echo "GitHub User: $GH_USER"
+          echo "GitHub Email: $GH_EMAIL"
 
           # Get a list of all repositories (owned + contributed to) that are not forks
-          # Fetch both owned repos and repos where user is a contributor
           REPOS=$(curl -H "Authorization: token $GH_PAT" -s "https://api.github.com/user/repos?per_page=100&affiliation=owner,collaborator,organization_member" | jq -r '.[] | select(.fork == false) | .full_name') || echo "Error fetching repositories"
 
           mkdir -p public-repos
@@ -50,45 +52,90 @@ jobs:
             REPO_URL="https://github.com/$REPO.git"
             AUTHENTICATED_REPO=$(echo "$REPO_URL" | sed "s/https:\/\//https:\/\/$GH_PAT@/g")
 
-            # Determine the default branch dynamically and clone full history (needed for git log analysis)
+            # Determine the default branch dynamically
             DEFAULT_BRANCH=$(curl -H "Authorization: token $GH_PAT" -s "https://api.github.com/repos/$REPO" | jq -r '.default_branch')
 
             echo "Cloning $REPO (default branch: $DEFAULT_BRANCH)..."
-            git clone --quiet --branch "$DEFAULT_BRANCH" "$AUTHENTICATED_REPO" "$(basename $REPO)-$DEFAULT_BRANCH" || echo "Failed to clone a repository"
+            git clone --quiet --branch "$DEFAULT_BRANCH" "$AUTHENTICATED_REPO" "$(basename $REPO)-$DEFAULT_BRANCH" || echo "Failed to clone $REPO"
           done
 
-          # Count only lines authored by the user
-          echo "Calculating lines of code authored by $GH_USER..."
+          echo "Calculating lines of code..."
           mkdir -p ../output
 
-          # Create a temporary directory structure with only user's contributions
-          mkdir -p ../user-code
-
+          # Count total contributors across all repos
+          TOTAL_CONTRIBUTORS=0
           for REPO_DIR in */; do
-            echo "Processing $REPO_DIR..."
-            cd "$REPO_DIR"
-
-            # Get all files tracked by git
-            git ls-files | while read -r file; do
-              if [ -f "$file" ]; then
-                # Use git blame to count lines authored by the user
-                mkdir -p "../user-code/$REPO_DIR$(dirname "$file")"
-
-                # Extract only lines authored by the user using git blame
-                git blame --line-porcelain "$file" 2>/dev/null | \
-                  awk -v user="$GH_USER" '
-                    /^author / { author=$0; sub(/^author /, "", author) }
-                    /^\t/ { if (author == user) print substr($0, 2) }
-                  ' > "../user-code/$REPO_DIR$file" 2>/dev/null || true
+            if [ -d "$REPO_DIR/.git" ]; then
+              cd "$REPO_DIR"
+              CONTRIBUTORS=$(git log --all --format='%ae' | sort -u | wc -l)
+              if [ "$CONTRIBUTORS" -gt "$TOTAL_CONTRIBUTORS" ]; then
+                TOTAL_CONTRIBUTORS=$CONTRIBUTORS
               fi
-            done
-
-            cd ..
+              cd ..
+            fi
           done
 
-          # Run cloc on user-authored code only
-          cd ../user-code
-          cloc . --json --report-file=../output/cloc-output.json --exclude-lang="${IGNORE_LANGS}"
+          echo "Maximum contributors in any repo: $TOTAL_CONTRIBUTORS"
+
+          # OPTIMIZATION: If you're the only contributor, just count all code
+          if [ "$TOTAL_CONTRIBUTORS" -le 1 ]; then
+            echo "Single contributor detected - counting all code (fast mode)"
+            cloc . --json --report-file=../output/cloc-output.json --exclude-lang="${IGNORE_LANGS}"
+          else
+            # Multiple contributors - filter by author email
+            echo "Multiple contributors detected - filtering by author"
+            mkdir -p ../user-code
+
+            # Get all email addresses associated with the user
+            EMAILS=()
+            if [ -n "$GH_EMAIL" ]; then
+              EMAILS+=("$GH_EMAIL")
+            fi
+            # Add common noreply emails
+            EMAILS+=("$GH_USER@users.noreply.github.com")
+            EMAILS+=("${GH_USER}@users.noreply.github.com")
+
+            for REPO_DIR in */; do
+              if [ ! -d "$REPO_DIR/.git" ]; then
+                continue
+              fi
+
+              echo "Processing $REPO_DIR..."
+              cd "$REPO_DIR"
+
+              # Get all files tracked by git
+              git ls-files | while read -r file; do
+                if [ -f "$file" ]; then
+                  mkdir -p "../user-code/$REPO_DIR$(dirname "$file")"
+
+                  # Extract lines authored by the user (matching any of their emails)
+                  git blame --line-porcelain "$file" 2>/dev/null | \
+                    awk -v emails="${EMAILS[*]}" '
+                      BEGIN { split(emails, email_arr) }
+                      /^author-mail / {
+                        author_email=$0
+                        sub(/^author-mail </, "", author_email)
+                        sub(/>$/, "", author_email)
+                      }
+                      /^\t/ {
+                        for (i in email_arr) {
+                          if (author_email == email_arr[i]) {
+                            print substr($0, 2)
+                            break
+                          }
+                        }
+                      }
+                    ' > "../user-code/$REPO_DIR$file" 2>/dev/null || true
+                fi
+              done
+
+              cd ..
+            done
+
+            # Run cloc on user-authored code only
+            cd ../user-code
+            cloc . --json --report-file=../output/cloc-output.json --exclude-lang="${IGNORE_LANGS}"
+          fi
 
       # Commit and push the updated cloc-output.json and README.md to the current branch
       - name: Commit and Push Output
