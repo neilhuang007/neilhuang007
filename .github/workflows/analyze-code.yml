@@ -139,10 +139,6 @@ jobs:
 
             log "Total emails to match: ${#EMAILS[@]}"
 
-            # Build email regex for git log filtering
-            EMAIL_PATTERN=$(printf "|%s" "${EMAILS[@]}")
-            EMAIL_PATTERN=${EMAIL_PATTERN:1}  # Remove leading |
-
             # Process each repo with optimizations
             REPO_COUNT=0
             for REPO_DIR in */; do
@@ -155,7 +151,13 @@ jobs:
 
               # Check user's commit percentage for logging
               TOTAL_COMMITS=$(git log --all --oneline | wc -l)
-              USER_COMMITS=$(git log --all --author="$EMAIL_PATTERN" --oneline 2>/dev/null | wc -l || echo "0")
+
+              # Count user commits by checking each email separately
+              USER_COMMITS=0
+              for email in "${EMAILS[@]}"; do
+                COUNT=$(git log --all --author="$email" --oneline 2>/dev/null | wc -l || echo "0")
+                USER_COMMITS=$((USER_COMMITS + COUNT))
+              done
 
               if [ "$TOTAL_COMMITS" -gt 0 ]; then
                 USER_PERCENT=$((100 * USER_COMMITS / TOTAL_COMMITS))
@@ -166,7 +168,15 @@ jobs:
               log "📂 Processing $REPO_DIR (${USER_PERCENT}% commits, $USER_COMMITS/$TOTAL_COMMITS)..."
 
               # OPTIMIZATION 1: Get only files touched by user (much faster than all files)
-              USER_FILES=$(git log --all --author="$EMAIL_PATTERN" --name-only --pretty=format: 2>/dev/null | sort -u | grep -v '^$')
+              # Collect files from all user emails
+              USER_FILES=""
+              for email in "${EMAILS[@]}"; do
+                FILES=$(git log --all --author="$email" --name-only --pretty=format: 2>/dev/null || true)
+                if [ -n "$FILES" ]; then
+                  USER_FILES="$USER_FILES"$'\n'"$FILES"
+                fi
+              done
+              USER_FILES=$(echo "$USER_FILES" | sort -u | grep -v '^$' || true)
               FILE_COUNT=$(echo "$USER_FILES" | grep -c '^' || echo "0")
               log "  Found $FILE_COUNT files modified by user"
 
