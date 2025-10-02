@@ -35,34 +35,52 @@ jobs:
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
         run: |
+          # Logging helper
+          log() {
+            echo "[$(date +'%Y-%m-%d %H:%M:%S')] $*"
+          }
+
           # Get GitHub user info
+          log "Fetching GitHub user info..."
           USER_DATA=$(curl -H "Authorization: token $GH_PAT" -s "https://api.github.com/user")
           GH_USER=$(echo "$USER_DATA" | jq -r '.login')
           GH_EMAIL=$(echo "$USER_DATA" | jq -r '.email // empty')
-          echo "GitHub User: $GH_USER"
-          echo "GitHub Email: $GH_EMAIL"
+          log "GitHub User: $GH_USER"
+          log "GitHub Email: $GH_EMAIL"
 
           # Get a list of all repositories (owned + contributed to) that are not forks
+          log "Fetching repository list..."
           REPOS=$(curl -H "Authorization: token $GH_PAT" -s "https://api.github.com/user/repos?per_page=100&affiliation=owner,collaborator,organization_member" | jq -r '.[] | select(.fork == false) | .full_name') || echo "Error fetching repositories"
+
+          REPO_COUNT=$(echo "$REPOS" | wc -l)
+          log "Found $REPO_COUNT repositories to clone"
 
           mkdir -p public-repos
           cd public-repos
 
+          CLONED=0
           for REPO in $REPOS; do
+            CLONED=$((CLONED + 1))
             REPO_URL="https://github.com/$REPO.git"
             AUTHENTICATED_REPO=$(echo "$REPO_URL" | sed "s/https:\/\//https:\/\/$GH_PAT@/g")
 
             # Determine the default branch dynamically
             DEFAULT_BRANCH=$(curl -H "Authorization: token $GH_PAT" -s "https://api.github.com/repos/$REPO" | jq -r '.default_branch')
 
-            echo "Cloning $REPO (default branch: $DEFAULT_BRANCH)..."
-            git clone --quiet --branch "$DEFAULT_BRANCH" "$AUTHENTICATED_REPO" "$(basename $REPO)-$DEFAULT_BRANCH" || echo "Failed to clone $REPO"
+            log "[$CLONED/$REPO_COUNT] Cloning $REPO (branch: $DEFAULT_BRANCH)..."
+            git clone --quiet --branch "$DEFAULT_BRANCH" "$AUTHENTICATED_REPO" "$(basename $REPO)-$DEFAULT_BRANCH" || log "❌ Failed to clone $REPO"
           done
 
-          echo "Calculating lines of code..."
+          log "Calculating lines of code..."
           mkdir -p ../output
 
+          # Logging helper with timestamps
+          log() {
+            echo "[$(date +'%Y-%m-%d %H:%M:%S')] $*"
+          }
+
           # Count total contributors across all repos
+          log "Analyzing repository contributors..."
           TOTAL_CONTRIBUTORS=0
           for REPO_DIR in */; do
             if [ -d "$REPO_DIR/.git" ]; then
@@ -75,42 +93,92 @@ jobs:
             fi
           done
 
-          echo "Maximum contributors in any repo: $TOTAL_CONTRIBUTORS"
+          log "Maximum contributors in any repo: $TOTAL_CONTRIBUTORS"
 
           # OPTIMIZATION: If you're the only contributor, just count all code
           if [ "$TOTAL_CONTRIBUTORS" -le 1 ]; then
-            echo "Single contributor detected - counting all code (fast mode)"
+            log "Single contributor detected - counting all code (fast mode)"
             cloc . --json --report-file=../output/cloc-output.json --exclude-lang="${IGNORE_LANGS}"
           else
             # Multiple contributors - filter by author email
-            echo "Multiple contributors detected - filtering by author"
+            log "Multiple contributors detected - filtering by author"
             mkdir -p ../user-code
 
-            # Get all email addresses associated with the user
+            # Auto-discover all email addresses used by the user in commits
+            log "Discovering user email addresses..."
             EMAILS=()
+
+            # Add GitHub API email if available
             if [ -n "$GH_EMAIL" ]; then
               EMAILS+=("$GH_EMAIL")
             fi
-            # Add common noreply emails
-            EMAILS+=("$GH_USER@users.noreply.github.com")
-            EMAILS+=("${GH_USER}@users.noreply.github.com")
 
+            # Add common noreply patterns
+            EMAILS+=("$GH_USER@users.noreply.github.com")
+
+            # Discover all unique emails from commits across all repos
+            ALL_EMAILS=$(for REPO_DIR in */; do
+              if [ -d "$REPO_DIR/.git" ]; then
+                cd "$REPO_DIR"
+                git log --all --format='%ae'
+                cd ..
+              fi
+            done | sort -u)
+
+            # Filter emails that likely belong to the user
+            # Matches: username, "neil", "javavirtualenv", or noreply patterns
+            while IFS= read -r email; do
+              if [[ "$email" == *"$GH_USER"* ]] || \
+                 [[ "$email" == *"neil"* ]] || \
+                 [[ "$email" == *"javavirtualenv"* ]] || \
+                 [[ "$email" == *"noreply.github.com"* ]]; then
+                EMAILS+=("$email")
+                log "  ✓ Found user email: $email"
+              fi
+            done <<< "$ALL_EMAILS"
+
+            log "Total emails to match: ${#EMAILS[@]}"
+
+            # Build email regex for git log filtering
+            EMAIL_PATTERN=$(printf "|%s" "${EMAILS[@]}")
+            EMAIL_PATTERN=${EMAIL_PATTERN:1}  # Remove leading |
+
+            # Process each repo with optimizations
+            REPO_COUNT=0
             for REPO_DIR in */; do
               if [ ! -d "$REPO_DIR/.git" ]; then
                 continue
               fi
 
-              echo "Processing $REPO_DIR..."
               cd "$REPO_DIR"
+              REPO_COUNT=$((REPO_COUNT + 1))
 
-              # Get all files tracked by git
-              git ls-files | while read -r file; do
+              # Check user's commit percentage for logging
+              TOTAL_COMMITS=$(git log --all --oneline | wc -l)
+              USER_COMMITS=$(git log --all --author="$EMAIL_PATTERN" --oneline 2>/dev/null | wc -l || echo "0")
+
+              if [ "$TOTAL_COMMITS" -gt 0 ]; then
+                USER_PERCENT=$((100 * USER_COMMITS / TOTAL_COMMITS))
+              else
+                USER_PERCENT=0
+              fi
+
+              log "📂 Processing $REPO_DIR (${USER_PERCENT}% commits, $USER_COMMITS/$TOTAL_COMMITS)..."
+
+              # OPTIMIZATION 1: Get only files touched by user (much faster than all files)
+              USER_FILES=$(git log --all --author="$EMAIL_PATTERN" --name-only --pretty=format: 2>/dev/null | sort -u | grep -v '^$')
+              FILE_COUNT=$(echo "$USER_FILES" | grep -c '^' || echo "0")
+              log "  Found $FILE_COUNT files modified by user"
+
+              # OPTIMIZATION 2: Process files in parallel (8 at a time)
+              echo "$USER_FILES" | xargs -P 8 -I {} bash -c '
+                file="{}"
                 if [ -f "$file" ]; then
-                  mkdir -p "../user-code/$REPO_DIR$(dirname "$file")"
+                  mkdir -p "../user-code/'"$REPO_DIR"'$(dirname "$file")"
 
-                  # Extract lines authored by the user (matching any of their emails)
+                  # Extract only user-authored lines
                   git blame --line-porcelain "$file" 2>/dev/null | \
-                    awk -v emails="${EMAILS[*]}" '
+                    awk -v emails="'"${EMAILS[*]}"'" '\''
                       BEGIN { split(emails, email_arr) }
                       /^author-mail / {
                         author_email=$0
@@ -125,16 +193,21 @@ jobs:
                           }
                         }
                       }
-                    ' > "../user-code/$REPO_DIR$file" 2>/dev/null || true
+                    '\'' > "../user-code/'"$REPO_DIR"'$file" 2>/dev/null || true
                 fi
-              done
+              '
 
               cd ..
             done
 
+            log "Processed $REPO_COUNT repos"
+            log "Running cloc on user-authored code..."
+
             # Run cloc on user-authored code only
             cd ../user-code
             cloc . --json --report-file=../output/cloc-output.json --exclude-lang="${IGNORE_LANGS}"
+
+            log "✅ Line counting complete!"
           fi
 
       # Commit and push the updated cloc-output.json and README.md to the current branch
@@ -142,6 +215,12 @@ jobs:
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
         run: |
+          # Logging helper
+          log() {
+            echo "[$(date +'%Y-%m-%d %H:%M:%S')] $*"
+          }
+
+          log "Configuring git..."
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
@@ -152,6 +231,8 @@ jobs:
           format_number() {
             printf "%'d\n" "$1"
           }
+
+          log "Generating README update..."
 
           # Ensure grouping is enabled for every printf in this step
           export LC_ALL="en_US.UTF-8"
@@ -211,6 +292,7 @@ jobs:
 
           # Replace content between markers. Requires these in README.md:
           # <!-- LANGUAGES BREAKDOWN START --> ... <!-- LANGUAGES BREAKDOWN END -->
+          log "Updating README.md..."
           echo "$CODE_BLOCK" > temp_block.txt
           sed -i '/<!-- LANGUAGES BREAKDOWN START -->/,/<!-- LANGUAGES BREAKDOWN END -->/{
               //!d
@@ -219,6 +301,11 @@ jobs:
 
           rm temp_block.txt
 
+          log "Committing changes..."
           git add output/cloc-output.json README.md
           git commit -m "chore: update README and cloc-output.json with latest code stats" || echo "No changes to commit"
+
+          log "Pushing to GitHub..."
           git push origin HEAD
+
+          log "✅ Workflow complete!"
