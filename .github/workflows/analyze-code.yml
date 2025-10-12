@@ -272,18 +272,15 @@ jobs:
 
             log "Generating cloc-compatible JSON output..."
 
-            # Generate JSON in cloc format
-            cat > output/cloc-output.json << 'EOF_JSON'
-{
-  "header": {
-    "cloc_version": "git-stats-1.0",
-    "generated_at": "GEN_TIME",
-    "report_source": "git log --numstat"
-  },
-EOF_JSON
+            # Generate JSON in cloc format using echo statements
+            TIMESTAMP=$(date -u +'%Y-%m-%d %H:%M:%S')
 
-            # Add timestamp
-            sed -i "s/GEN_TIME/$(date -u +'%Y-%m-%d %H:%M:%S')/" output/cloc-output.json
+            echo "{" > output/cloc-output.json
+            echo "  \"header\": {" >> output/cloc-output.json
+            echo "    \"cloc_version\": \"git-stats-1.0\"," >> output/cloc-output.json
+            echo "    \"generated_at\": \"$TIMESTAMP\"," >> output/cloc-output.json
+            echo "    \"report_source\": \"git log --numstat\"" >> output/cloc-output.json
+            echo "  }," >> output/cloc-output.json
 
             # Add language entries
             FIRST=true
@@ -297,14 +294,12 @@ EOF_JSON
                 echo "," >> output/cloc-output.json
               fi
 
-              cat >> output/cloc-output.json << EOF_LANG
-  "$lang": {
-    "nFiles": $files,
-    "blank": 0,
-    "comment": 0,
-    "code": $code
-  }
-EOF_LANG
+              echo "  \"$lang\": {" >> output/cloc-output.json
+              echo "    \"nFiles\": $files," >> output/cloc-output.json
+              echo "    \"blank\": 0," >> output/cloc-output.json
+              echo "    \"comment\": 0," >> output/cloc-output.json
+              echo "    \"code\": $code" >> output/cloc-output.json
+              printf "  }" >> output/cloc-output.json
             done
 
             # Add SUM entry
@@ -312,15 +307,13 @@ EOF_LANG
               echo "," >> output/cloc-output.json
             fi
 
-            cat >> output/cloc-output.json << EOF_SUM
-  "SUM": {
-    "blank": 0,
-    "comment": 0,
-    "code": $TOTAL_CODE,
-    "nFiles": $TOTAL_FILES
-  }
-}
-EOF_SUM
+            echo "  \"SUM\": {" >> output/cloc-output.json
+            echo "    \"blank\": 0," >> output/cloc-output.json
+            echo "    \"comment\": 0," >> output/cloc-output.json
+            echo "    \"code\": $TOTAL_CODE," >> output/cloc-output.json
+            echo "    \"nFiles\": $TOTAL_FILES" >> output/cloc-output.json
+            echo "  }" >> output/cloc-output.json
+            echo "}" >> output/cloc-output.json
 
             # Clean up temp files
             rm -f public-repos/temp_stats_*.txt
