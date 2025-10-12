@@ -12,12 +12,10 @@ jobs:
   count-lines:
     runs-on: ubuntu-latest
     env:
-      # Check cloc docs for supported languages and exact names (e.g., "Vuejs Component", "C#")
-      # HIGHLIGHT_LANGS: show these languages individually; everything else goes to "Others"
-      HIGHLIGHT_LANGS: "JavaScript,TypeScript,JSX,Vuejs Component,PHP,C#"
-
       # IGNORE_LANGS: drop these languages entirely (not shown and not counted)
       IGNORE_LANGS: "JSON,HTML,CSS,SCSS,Sass,Markdown,SVG,XML,YAML,TOML,CSV,Text,Properties"
+
+      # Display: Show top 5 languages by line count, everything else goes to "Others"
 
     steps:
       - name: Checkout Code
@@ -344,40 +342,26 @@ jobs:
           # Grab total from cloc
           TOTAL_LINES=$(jq '.SUM.code // 0' output/cloc-output.json)
 
-          OTHER_LINES=0
+          # Get top 5 languages by line count
+          TOP_5_LANGS=$(jq -r 'to_entries
+            | map(select(.key != "header" and .key != "SUM"))
+            | sort_by(-.value.code)
+            | .[0:5]
+            | .[]
+            | "\(.key)|\(.value.code)"' output/cloc-output.json)
+
+          # Calculate "Others" (everything not in top 5)
+          TOP_5_TOTAL=0
           FORMATTED_BREAKDOWN=""
-          declare -A LANG_LINES
 
-          # Normalize the highlight list for exact, comma-bounded matching (no false partial matches)
-          HL=",$(echo "$HIGHLIGHT_LANGS" | tr -d ' '),"
+          while IFS='|' read -r lang lines; do
+            TOP_5_TOTAL=$((TOP_5_TOTAL + lines))
+            FORMATTED=$(format_number "$lines")
+            FORMATTED_BREAKDOWN+=$(printf "%-12s --> %s lines\n" "$lang" "$FORMATTED")$'\n'
+          done <<< "$TOP_5_LANGS"
 
-          # First pass: collect all language data
-          while read -r entry; do
-            LANG=$(echo "$entry" | jq -r '.lang')
-            LINES=$(echo "$entry" | jq -r '.lines')
-
-            if [[ "$HL" == *",$LANG,"* ]]; then
-              LANG_LINES["$LANG"]="$LINES"
-            else
-              OTHER_LINES=$((OTHER_LINES + LINES))
-            fi
-          done < <(
-            jq -c 'to_entries
-              | map(select(.key != "header" and .key != "SUM"))
-              | map({lang: .key, lines: .value.code})
-              | map(select(.lines > 0))
-              | sort_by(-.lines)
-              | .[]' output/cloc-output.json
-          )
-
-          # Second pass: sort languages by line count (descending) and format
-          for LANG in $(for key in "${!LANG_LINES[@]}"; do echo "$key ${LANG_LINES[$key]}"; done | sort -rn -k2 | cut -d' ' -f1); do
-            LINES="${LANG_LINES[$LANG]}"
-            FORMATTED=$(format_number "$LINES")
-            FORMATTED_BREAKDOWN+=$(printf "%-12s --> %s lines\n" "$LANG" "$FORMATTED")$'\n'
-          done
-
-          # "Others" includes all non-highlighted languages that cloc reported (after --exclude-lang); excluded ones never reach here
+          # Calculate "Others"
+          OTHER_LINES=$((TOTAL_LINES - TOP_5_TOTAL))
           if [[ $OTHER_LINES -gt 0 ]]; then
             FORMATTED_OTHER=$(format_number "$OTHER_LINES")
             FORMATTED_BREAKDOWN+=$(printf "%-12s --> %s lines\n" "Others" "$FORMATTED_OTHER")$'\n'
