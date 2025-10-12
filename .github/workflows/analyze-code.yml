@@ -357,14 +357,30 @@ jobs:
           while IFS='|' read -r lang lines; do
             TOP_5_TOTAL=$((TOP_5_TOTAL + lines))
             FORMATTED=$(format_number "$lines")
-            FORMATTED_BREAKDOWN+=$(printf "%-12s --> %s lines\n" "$lang" "$FORMATTED")$'\n'
+
+            # Calculate percentage
+            if [ "$TOTAL_LINES" -gt 0 ]; then
+              PERCENTAGE=$(awk "BEGIN {printf \"%.1f\", ($lines / $TOTAL_LINES) * 100}")
+            else
+              PERCENTAGE="0.0"
+            fi
+
+            FORMATTED_BREAKDOWN+=$(printf "%-12s --> %s lines (%s%%)\n" "$lang" "$FORMATTED" "$PERCENTAGE")$'\n'
           done <<< "$TOP_5_LANGS"
 
           # Calculate "Others"
           OTHER_LINES=$((TOTAL_LINES - TOP_5_TOTAL))
           if [[ $OTHER_LINES -gt 0 ]]; then
             FORMATTED_OTHER=$(format_number "$OTHER_LINES")
-            FORMATTED_BREAKDOWN+=$(printf "%-12s --> %s lines\n" "Others" "$FORMATTED_OTHER")$'\n'
+
+            # Calculate percentage for Others
+            if [ "$TOTAL_LINES" -gt 0 ]; then
+              OTHER_PERCENTAGE=$(awk "BEGIN {printf \"%.1f\", ($OTHER_LINES / $TOTAL_LINES) * 100}")
+            else
+              OTHER_PERCENTAGE="0.0"
+            fi
+
+            FORMATTED_BREAKDOWN+=$(printf "%-12s --> %s lines (%s%%)\n" "Others" "$FORMATTED_OTHER" "$OTHER_PERCENTAGE")$'\n'
           fi
 
           # Format total ONCE (do not overwrite later)
