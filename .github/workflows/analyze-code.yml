@@ -102,7 +102,6 @@ jobs:
           else
             # Multiple contributors - filter by author email
             log "Multiple contributors detected - filtering by author"
-            mkdir -p ../user-code
 
             # Auto-discover all email addresses used by the user in commits
             log "Discovering user email addresses..."
@@ -167,57 +166,166 @@ jobs:
 
               log "📂 Processing $REPO_DIR (${USER_PERCENT}% commits, $USER_COMMITS/$TOTAL_COMMITS)..."
 
-              # OPTIMIZATION 1: Get only files touched by user (much faster than all files)
-              # Collect files from all user emails
-              USER_FILES=""
+              # NEW EFFICIENT ALGORITHM: Use git diff to count lines directly
+              # Get all commits by user and count added lines per file
+
+              # Build email grep pattern for faster filtering
+              EMAIL_PATTERN=$(IFS='|'; echo "${EMAILS[*]}")
+
+              # Get all user commits
+              USER_COMMITS=$(git log --all --format='%H' --author-regexp --grep="$EMAIL_PATTERN" --all-match 2>/dev/null || \
+                             git log --all --format='%H' $(printf -- '--author=%s ' "${EMAILS[@]}") 2>/dev/null || true)
+
+              if [ -z "$USER_COMMITS" ]; then
+                log "  No commits found for user emails"
+                cd ..
+                continue
+              fi
+
+              # Count lines added per file using git log with numstat
+              # This is much faster than git blame and gives us accurate contribution counts
+              declare -A FILE_LINES
+
               for email in "${EMAILS[@]}"; do
-                FILES=$(git log --all --author="$email" --name-only --pretty=format: 2>/dev/null || true)
-                if [ -n "$FILES" ]; then
-                  USER_FILES="$USER_FILES"$'\n'"$FILES"
-                fi
+                # Get stats: added lines, deleted lines, filename
+                # Note: We count ALL contributions, including to files that may have been deleted
+                # Process in awk to avoid bash subshell issues
+                git log --all --author="$email" --pretty=tformat: --numstat 2>/dev/null | \
+                  awk '$1 ~ /^[0-9]+$/ && NF >= 3 {
+                    ext = $3
+                    sub(/.*\./, "", ext)
+                    if (index($3, ".") == 0) ext = "no_extension"
+                    print $1 "|" ext "|" $3
+                  }' >> "../temp_stats_$REPO_COUNT.txt"
               done
-              USER_FILES=$(echo "$USER_FILES" | sort -u | grep -v '^$' || true)
-              FILE_COUNT=$(echo "$USER_FILES" | grep -c '^' || echo "0")
-              log "  Found $FILE_COUNT files modified by user"
 
-              # OPTIMIZATION 2: Process files in parallel (8 at a time)
-              echo "$USER_FILES" | xargs -P 8 -I {} bash -c '
-                file="{}"
-                if [ -f "$file" ]; then
-                  mkdir -p "../user-code/'"$REPO_DIR"'$(dirname "$file")"
-
-                  # Extract only user-authored lines
-                  git blame --line-porcelain "$file" 2>/dev/null | \
-                    awk -v emails="'"${EMAILS[*]}"'" '\''
-                      BEGIN { split(emails, email_arr) }
-                      /^author-mail / {
-                        author_email=$0
-                        sub(/^author-mail </, "", author_email)
-                        sub(/>$/, "", author_email)
-                      }
-                      /^\t/ {
-                        for (i in email_arr) {
-                          if (author_email == email_arr[i]) {
-                            print substr($0, 2)
-                            break
-                          }
-                        }
-                      }
-                    '\'' > "../user-code/'"$REPO_DIR"'$file" 2>/dev/null || true
-                fi
-              '
+              log "  Collected contribution stats"
 
               cd ..
             done
 
             log "Processed $REPO_COUNT repos"
-            log "Running cloc on user-authored code..."
+            log "Processing statistics and generating output..."
 
-            # Run cloc on user-authored code only
-            cd ../user-code
-            cloc . --json --report-file=../output/cloc-output.json --exclude-lang="${IGNORE_LANGS}"
+            # Process all temp stats files and aggregate by language
+            cd ..
 
-            log "✅ Line counting complete!"
+            # Define language mapping from file extensions (matching cloc's language names)
+            declare -A EXT_TO_LANG=(
+              # JavaScript/TypeScript
+              ["js"]="JavaScript" ["jsx"]="JSX" ["ts"]="TypeScript" ["tsx"]="TypeScript"
+              ["vue"]="Vuejs Component" ["mjs"]="JavaScript" ["cjs"]="JavaScript"
+
+              # Web (ignored, but defined for completeness)
+              ["html"]="HTML" ["htm"]="HTML" ["css"]="CSS" ["scss"]="SCSS" ["sass"]="Sass"
+              ["json"]="JSON" ["xml"]="XML" ["svg"]="SVG" ["yaml"]="YAML" ["yml"]="YAML"
+
+              # Backend
+              ["php"]="PHP" ["java"]="Java" ["py"]="Python" ["rb"]="Ruby" ["go"]="Go"
+              ["rs"]="Rust" ["cpp"]="C++" ["cc"]="C++" ["cxx"]="C++" ["c"]="C" ["h"]="C/C++ Header"
+              ["cs"]="C#" ["kt"]="Kotlin" ["swift"]="Swift" ["m"]="Objective-C"
+
+              # Shell/Config
+              ["sh"]="Bourne Shell" ["bash"]="Bourne Again Shell" ["zsh"]="Zsh"
+              ["toml"]="TOML" ["ini"]="INI" ["cfg"]="INI" ["properties"]="Properties"
+              ["md"]="Markdown" ["txt"]="Text"
+
+              # Other
+              ["sql"]="SQL" ["graphql"]="GraphQL" ["proto"]="Protocol Buffers"
+            )
+
+            # Build ignore list from IGNORE_LANGS
+            IFS=',' read -ra IGNORE_ARRAY <<< "$IGNORE_LANGS"
+            declare -A IGNORE_MAP
+            for lang in "${IGNORE_ARRAY[@]}"; do
+              # Trim whitespace
+              lang=$(echo "$lang" | xargs)
+              IGNORE_MAP["$lang"]=1
+            done
+
+            # Aggregate statistics by language
+            declare -A LANG_STATS_CODE
+            declare -A LANG_STATS_FILES
+            TOTAL_CODE=0
+            TOTAL_FILES=0
+
+            log "Aggregating statistics from temporary files..."
+            for stats_file in public-repos/temp_stats_*.txt; do
+              if [ -f "$stats_file" ]; then
+                while IFS='|' read -r added ext filename; do
+                  # Map extension to language
+                  lang="${EXT_TO_LANG[$ext]:-$ext}"
+
+                  # Check if language should be ignored
+                  if [ -n "${IGNORE_MAP[$lang]}" ]; then
+                    continue
+                  fi
+
+                  # Aggregate
+                  LANG_STATS_CODE["$lang"]=$((${LANG_STATS_CODE[$lang]:-0} + added))
+                  LANG_STATS_FILES["$lang"]=$((${LANG_STATS_FILES[$lang]:-0} + 1))
+                  TOTAL_CODE=$((TOTAL_CODE + added))
+                  TOTAL_FILES=$((TOTAL_FILES + 1))
+                done < "$stats_file"
+              fi
+            done
+
+            log "Generating cloc-compatible JSON output..."
+
+            # Generate JSON in cloc format
+            cat > output/cloc-output.json << 'EOF_JSON'
+{
+  "header": {
+    "cloc_version": "git-stats-1.0",
+    "generated_at": "GEN_TIME",
+    "report_source": "git log --numstat"
+  },
+EOF_JSON
+
+            # Add timestamp
+            sed -i "s/GEN_TIME/$(date -u +'%Y-%m-%d %H:%M:%S')/" output/cloc-output.json
+
+            # Add language entries
+            FIRST=true
+            for lang in "${!LANG_STATS_CODE[@]}"; do
+              code=${LANG_STATS_CODE[$lang]}
+              files=${LANG_STATS_FILES[$lang]}
+
+              if [ "$FIRST" = true ]; then
+                FIRST=false
+              else
+                echo "," >> output/cloc-output.json
+              fi
+
+              cat >> output/cloc-output.json << EOF_LANG
+  "$lang": {
+    "nFiles": $files,
+    "blank": 0,
+    "comment": 0,
+    "code": $code
+  }
+EOF_LANG
+            done
+
+            # Add SUM entry
+            if [ "$FIRST" = false ]; then
+              echo "," >> output/cloc-output.json
+            fi
+
+            cat >> output/cloc-output.json << EOF_SUM
+  "SUM": {
+    "blank": 0,
+    "comment": 0,
+    "code": $TOTAL_CODE,
+    "nFiles": $TOTAL_FILES
+  }
+}
+EOF_SUM
+
+            # Clean up temp files
+            rm -f public-repos/temp_stats_*.txt
+
+            log "✅ Line counting complete! Total: $TOTAL_CODE lines across $TOTAL_FILES files"
           fi
 
       # Commit and push the updated cloc-output.json and README.md to the current branch
