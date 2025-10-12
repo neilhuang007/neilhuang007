@@ -272,48 +272,40 @@ jobs:
 
             log "Generating cloc-compatible JSON output..."
 
-            # Generate JSON in cloc format using echo statements
+            # Use jq to generate valid JSON (avoids escaping issues)
             TIMESTAMP=$(date -u +'%Y-%m-%d %H:%M:%S')
 
-            echo "{" > output/cloc-output.json
-            echo "  \"header\": {" >> output/cloc-output.json
-            echo "    \"cloc_version\": \"git-stats-1.0\"," >> output/cloc-output.json
-            echo "    \"generated_at\": \"$TIMESTAMP\"," >> output/cloc-output.json
-            echo "    \"report_source\": \"git log --numstat\"" >> output/cloc-output.json
-            echo "  }," >> output/cloc-output.json
+            # Build JSON object using jq
+            jq -n \
+              --arg timestamp "$TIMESTAMP" \
+              --argjson total_code "$TOTAL_CODE" \
+              --argjson total_files "$TOTAL_FILES" \
+              '{
+                header: {
+                  cloc_version: "git-stats-1.0",
+                  generated_at: $timestamp,
+                  report_source: "git log --numstat"
+                },
+                SUM: {
+                  blank: 0,
+                  comment: 0,
+                  code: $total_code,
+                  nFiles: $total_files
+                }
+              }' > output/cloc-output.json
 
-            # Add language entries
-            FIRST=true
+            # Add language entries using jq
             for lang in "${!LANG_STATS_CODE[@]}"; do
               code=${LANG_STATS_CODE[$lang]}
               files=${LANG_STATS_FILES[$lang]}
 
-              if [ "$FIRST" = true ]; then
-                FIRST=false
-              else
-                echo "," >> output/cloc-output.json
-              fi
-
-              echo "  \"$lang\": {" >> output/cloc-output.json
-              echo "    \"nFiles\": $files," >> output/cloc-output.json
-              echo "    \"blank\": 0," >> output/cloc-output.json
-              echo "    \"comment\": 0," >> output/cloc-output.json
-              echo "    \"code\": $code" >> output/cloc-output.json
-              printf "  }" >> output/cloc-output.json
+              jq --arg lang "$lang" \
+                 --argjson code "$code" \
+                 --argjson files "$files" \
+                 '. + {($lang): {nFiles: $files, blank: 0, comment: 0, code: $code}}' \
+                 output/cloc-output.json > output/cloc-output.json.tmp && \
+                 mv output/cloc-output.json.tmp output/cloc-output.json
             done
-
-            # Add SUM entry
-            if [ "$FIRST" = false ]; then
-              echo "," >> output/cloc-output.json
-            fi
-
-            echo "  \"SUM\": {" >> output/cloc-output.json
-            echo "    \"blank\": 0," >> output/cloc-output.json
-            echo "    \"comment\": 0," >> output/cloc-output.json
-            echo "    \"code\": $TOTAL_CODE," >> output/cloc-output.json
-            echo "    \"nFiles\": $TOTAL_FILES" >> output/cloc-output.json
-            echo "  }" >> output/cloc-output.json
-            echo "}" >> output/cloc-output.json
 
             # Clean up temp files
             rm -f public-repos/temp_stats_*.txt
