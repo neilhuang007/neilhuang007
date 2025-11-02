@@ -58,8 +58,8 @@ Java         --> 2,724,514 lines (59.7%)
 white        --> 532,994 lines (11.7%)
 srg          --> 352,795 lines (7.7%)
 no_extension --> 261,036 lines (5.7%)
-JavaScript   --> 210,461 lines (4.6%)
+JavaScript   --> 210,713 lines (4.6%)
 Others       --> 484,821 lines (10.6%)
 
-[ TOTAL LINES OF CODE: 4,566,621 ]
+[ TOTAL LINES OF CODE: 4,566,873 ]
 ```
