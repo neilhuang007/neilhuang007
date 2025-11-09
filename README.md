@@ -54,12 +54,12 @@
 ```
 [ LANGUAGES BREAKDOWN ]
 
-Java         --> 2,724,514 lines (59.7%)
+Java         --> 2,724,632 lines (59.6%)
 white        --> 532,994 lines (11.7%)
 srg          --> 352,795 lines (7.7%)
 no_extension --> 261,036 lines (5.7%)
-JavaScript   --> 210,713 lines (4.6%)
-Others       --> 484,821 lines (10.6%)
+JavaScript   --> 214,377 lines (4.7%)
+Others       --> 487,951 lines (10.7%)
 
-[ TOTAL LINES OF CODE: 4,566,873 ]
+[ TOTAL LINES OF CODE: 4,573,785 ]
 ```
