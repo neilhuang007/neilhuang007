@@ -1,14 +1,14 @@
 {
   "header": {
     "cloc_version": "git-stats-1.0",
-    "generated_at": "2025-11-09 01:48:35",
+    "generated_at": "2025-11-16 01:50:39",
     "report_source": "git log --numstat"
   },
   "SUM": {
     "blank": 0,
     "comment": 0,
-    "code": 4573785,
-    "nFiles": 72533
+    "code": 4602423,
+    "nFiles": 72665
   },
   "black": {
     "nFiles": 656,
@@ -17,10 +17,10 @@
     "code": 8101
   },
   "Python": {
-    "nFiles": 314,
+    "nFiles": 350,
     "blank": 0,
     "comment": 0,
-    "code": 29775
+    "code": 34987
   },
   "9/src/cn/yapeteam/yolbi/{event": {
     "nFiles": 1,
@@ -161,10 +161,10 @@
     "code": 32
   },
   "JavaScript": {
-    "nFiles": 2203,
+    "nFiles": 2269,
     "blank": 0,
     "comment": 0,
-    "code": 214377
+    "code": 237219
   },
   "def": {
     "nFiles": 15,
@@ -179,16 +179,16 @@
     "code": 13915
   },
   "Java": {
-    "nFiles": 23385,
+    "nFiles": 23391,
     "blank": 0,
     "comment": 0,
-    "code": 2724632
+    "code": 2724700
   },
   "no_extension": {
-    "nFiles": 5308,
+    "nFiles": 5310,
     "blank": 0,
     "comment": 0,
-    "code": 261036
+    "code": 261438
   },
   "1/src/cn/yapeteam/yolbi/module/impl/movement": {
     "nFiles": 4,
@@ -237,6 +237,12 @@
     "blank": 0,
     "comment": 0,
     "code": 127565
+  },
+  "buf": {
+    "nFiles": 8,
+    "blank": 0,
+    "comment": 0,
+    "code": 0
   },
   "C": {
     "nFiles": 25,
@@ -287,10 +293,10 @@
     "code": 1840
   },
   "gitignore": {
-    "nFiles": 101,
+    "nFiles": 109,
     "blank": 0,
     "comment": 0,
-    "code": 1450
+    "code": 1558
   },
   "otf": {
     "nFiles": 2,
@@ -533,10 +539,10 @@
     "code": 324
   },
   "gitkeep": {
-    "nFiles": 6,
+    "nFiles": 8,
     "blank": 0,
     "comment": 0,
-    "code": 6
+    "code": 8
   },
   "cfg\"": {
     "nFiles": 2,
@@ -623,7 +629,7 @@
     "code": 5
   },
   "png": {
-    "nFiles": 3909,
+    "nFiles": 3911,
     "blank": 0,
     "comment": 0,
     "code": 15
@@ -683,10 +689,10 @@
     "code": 1936
   },
   "gitattributes": {
-    "nFiles": 23,
+    "nFiles": 25,
     "blank": 0,
     "comment": 0,
-    "code": 57
+    "code": 61
   },
   "9/src/main/java/dev/haedus/core/{module": {
     "nFiles": 1,
