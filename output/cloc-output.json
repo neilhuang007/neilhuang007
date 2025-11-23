@@ -1,14 +1,14 @@
 {
   "header": {
     "cloc_version": "git-stats-1.0",
-    "generated_at": "2025-11-16 01:50:39",
+    "generated_at": "2025-11-23 01:57:34",
     "report_source": "git log --numstat"
   },
   "SUM": {
     "blank": 0,
     "comment": 0,
-    "code": 4602423,
-    "nFiles": 72665
+    "code": 4627305,
+    "nFiles": 72687
   },
   "black": {
     "nFiles": 656,
@@ -161,10 +161,10 @@
     "code": 32
   },
   "JavaScript": {
-    "nFiles": 2269,
+    "nFiles": 2275,
     "blank": 0,
     "comment": 0,
-    "code": 237219
+    "code": 238605
   },
   "def": {
     "nFiles": 15,
@@ -179,16 +179,16 @@
     "code": 13915
   },
   "Java": {
-    "nFiles": 23391,
+    "nFiles": 23399,
     "blank": 0,
     "comment": 0,
-    "code": 2724700
+    "code": 2724766
   },
   "no_extension": {
-    "nFiles": 5310,
+    "nFiles": 5318,
     "blank": 0,
     "comment": 0,
-    "code": 261438
+    "code": 284868
   },
   "1/src/cn/yapeteam/yolbi/module/impl/movement": {
     "nFiles": 4,
