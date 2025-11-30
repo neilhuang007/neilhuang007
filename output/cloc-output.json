@@ -1,14 +1,14 @@
 {
   "header": {
     "cloc_version": "git-stats-1.0",
-    "generated_at": "2025-11-23 01:57:34",
+    "generated_at": "2025-11-30 01:56:35",
     "report_source": "git log --numstat"
   },
   "SUM": {
     "blank": 0,
     "comment": 0,
-    "code": 4627305,
-    "nFiles": 72687
+    "code": 4639251,
+    "nFiles": 72895
   },
   "black": {
     "nFiles": 656,
@@ -65,10 +65,10 @@
     "code": 195
   },
   "TypeScript": {
-    "nFiles": 808,
+    "nFiles": 866,
     "blank": 0,
     "comment": 0,
-    "code": 65524
+    "code": 68440
   },
   "2/src/map": {
     "nFiles": 1,
@@ -161,10 +161,10 @@
     "code": 32
   },
   "JavaScript": {
-    "nFiles": 2275,
+    "nFiles": 2401,
     "blank": 0,
     "comment": 0,
-    "code": 238605
+    "code": 247391
   },
   "def": {
     "nFiles": 15,
@@ -185,7 +185,7 @@
     "code": 2724766
   },
   "no_extension": {
-    "nFiles": 5318,
+    "nFiles": 5322,
     "blank": 0,
     "comment": 0,
     "code": 284868
@@ -653,10 +653,10 @@
     "code": 6
   },
   "ps1": {
-    "nFiles": 3,
+    "nFiles": 5,
     "blank": 0,
     "comment": 0,
-    "code": 28
+    "code": 88
   },
   "npmignore": {
     "nFiles": 6,
@@ -683,10 +683,10 @@
     "code": 10
   },
   "Bourne Shell": {
-    "nFiles": 58,
+    "nFiles": 68,
     "blank": 0,
     "comment": 0,
-    "code": 1936
+    "code": 1988
   },
   "gitattributes": {
     "nFiles": 25,
@@ -725,10 +725,10 @@
     "code": 1242
   },
   "example": {
-    "nFiles": 16,
+    "nFiles": 24,
     "blank": 0,
     "comment": 0,
-    "code": 82
+    "code": 214
   },
   "fsh": {
     "nFiles": 225,
