@@ -1,14 +1,14 @@
 {
   "header": {
     "cloc_version": "git-stats-1.0",
-    "generated_at": "2025-12-28 02:02:44",
+    "generated_at": "2026-01-04 02:03:46",
     "report_source": "git log --numstat"
   },
   "SUM": {
     "blank": 0,
     "comment": 0,
-    "code": 4778343,
-    "nFiles": 74083
+    "code": 4947659,
+    "nFiles": 75729
   },
   "black": {
     "nFiles": 656,
@@ -17,10 +17,10 @@
     "code": 8101
   },
   "Python": {
-    "nFiles": 464,
+    "nFiles": 466,
     "blank": 0,
     "comment": 0,
-    "code": 44225
+    "code": 44385
   },
   "9/src/cn/yapeteam/yolbi/{event": {
     "nFiles": 1,
@@ -71,10 +71,10 @@
     "code": 195
   },
   "TypeScript": {
-    "nFiles": 904,
+    "nFiles": 912,
     "blank": 0,
     "comment": 0,
-    "code": 69428
+    "code": 70008
   },
   "2/src/map": {
     "nFiles": 1,
@@ -167,10 +167,10 @@
     "code": 32
   },
   "JavaScript": {
-    "nFiles": 2531,
+    "nFiles": 2539,
     "blank": 0,
     "comment": 0,
-    "code": 258671
+    "code": 259763
   },
   "def": {
     "nFiles": 15,
@@ -185,16 +185,16 @@
     "code": 13915
   },
   "Java": {
-    "nFiles": 24235,
+    "nFiles": 25825,
     "blank": 0,
     "comment": 0,
-    "code": 2837280
+    "code": 3002562
   },
   "no_extension": {
-    "nFiles": 5322,
+    "nFiles": 5334,
     "blank": 0,
     "comment": 0,
-    "code": 284868
+    "code": 285410
   },
   "1/src/cn/yapeteam/yolbi/module/impl/movement": {
     "nFiles": 4,
@@ -299,10 +299,10 @@
     "code": 1840
   },
   "gitignore": {
-    "nFiles": 117,
+    "nFiles": 121,
     "blank": 0,
     "comment": 0,
-    "code": 1574
+    "code": 1634
   },
   "otf": {
     "nFiles": 2,
@@ -371,10 +371,10 @@
     "code": 12
   },
   "bat": {
-    "nFiles": 35,
+    "nFiles": 37,
     "blank": 0,
     "comment": 0,
-    "code": 1307
+    "code": 1493
   },
   "manifest": {
     "nFiles": 5,
@@ -383,10 +383,10 @@
     "code": 50
   },
   "bak": {
-    "nFiles": 3,
+    "nFiles": 7,
     "blank": 0,
     "comment": 0,
-    "code": 358
+    "code": 1366
   },
   "nvmrc": {
     "nFiles": 2,
@@ -557,10 +557,10 @@
     "code": 0
   },
   "gradle": {
-    "nFiles": 13,
+    "nFiles": 17,
     "blank": 0,
     "comment": 0,
-    "code": 701
+    "code": 925
   },
   "SF": {
     "nFiles": 1,
@@ -658,6 +658,12 @@
     "comment": 0,
     "code": 6
   },
+  "nbt": {
+    "nFiles": 10,
+    "blank": 0,
+    "comment": 0,
+    "code": 164
+  },
   "ps1": {
     "nFiles": 5,
     "blank": 0,
@@ -695,10 +701,10 @@
     "code": 3520
   },
   "gitattributes": {
-    "nFiles": 25,
+    "nFiles": 27,
     "blank": 0,
     "comment": 0,
-    "code": 61
+    "code": 79
   },
   "icls": {
     "nFiles": 2,
