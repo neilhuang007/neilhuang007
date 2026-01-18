@@ -1,14 +1,14 @@
 {
   "header": {
     "cloc_version": "git-stats-1.0",
-    "generated_at": "2026-01-11 02:04:26",
+    "generated_at": "2026-01-18 02:02:47",
     "report_source": "git log --numstat"
   },
   "SUM": {
     "blank": 0,
     "comment": 0,
-    "code": 4948729,
-    "nFiles": 75777
+    "code": 5119249,
+    "nFiles": 77979
   },
   "black": {
     "nFiles": 656,
@@ -17,10 +17,10 @@
     "code": 8101
   },
   "Python": {
-    "nFiles": 466,
+    "nFiles": 470,
     "blank": 0,
     "comment": 0,
-    "code": 44385
+    "code": 44553
   },
   "9/src/cn/yapeteam/yolbi/{event": {
     "nFiles": 1,
@@ -45,6 +45,12 @@
     "blank": 0,
     "comment": 0,
     "code": 37
+  },
+  "disabled": {
+    "nFiles": 12,
+    "blank": 0,
+    "comment": 0,
+    "code": 1318
   },
   "tsrg": {
     "nFiles": 4,
@@ -71,10 +77,10 @@
     "code": 195
   },
   "TypeScript": {
-    "nFiles": 912,
+    "nFiles": 914,
     "blank": 0,
     "comment": 0,
-    "code": 70008
+    "code": 70020
   },
   "2/src/map": {
     "nFiles": 1,
@@ -101,10 +107,10 @@
     "code": 510
   },
   "conf": {
-    "nFiles": 2,
+    "nFiles": 4,
     "blank": 0,
     "comment": 0,
-    "code": 0
+    "code": 168
   },
   "srg": {
     "nFiles": 9,
@@ -113,10 +119,10 @@
     "code": 352795
   },
   "backup": {
-    "nFiles": 2,
+    "nFiles": 4,
     "blank": 0,
     "comment": 0,
-    "code": 954
+    "code": 1116
   },
   "pro": {
     "nFiles": 3,
@@ -167,10 +173,10 @@
     "code": 32
   },
   "JavaScript": {
-    "nFiles": 2565,
+    "nFiles": 2615,
     "blank": 0,
     "comment": 0,
-    "code": 260325
+    "code": 261403
   },
   "def": {
     "nFiles": 15,
@@ -185,10 +191,10 @@
     "code": 13915
   },
   "Java": {
-    "nFiles": 25847,
+    "nFiles": 27645,
     "blank": 0,
     "comment": 0,
-    "code": 3003070
+    "code": 3143540
   },
   "no_extension": {
     "nFiles": 5334,
@@ -299,16 +305,22 @@
     "code": 1840
   },
   "gitignore": {
-    "nFiles": 121,
+    "nFiles": 123,
     "blank": 0,
     "comment": 0,
-    "code": 1634
+    "code": 1718
   },
   "otf": {
     "nFiles": 2,
     "blank": 0,
     "comment": 0,
     "code": 0
+  },
+  "JSX": {
+    "nFiles": 16,
+    "blank": 0,
+    "comment": 0,
+    "code": 520
   },
   "ahk": {
     "nFiles": 16,
@@ -376,6 +388,12 @@
     "comment": 0,
     "code": 1493
   },
+  "mdx": {
+    "nFiles": 304,
+    "blank": 0,
+    "comment": 0,
+    "code": 26228
+  },
   "manifest": {
     "nFiles": 5,
     "blank": 0,
@@ -383,7 +401,7 @@
     "code": 50
   },
   "bak": {
-    "nFiles": 7,
+    "nFiles": 11,
     "blank": 0,
     "comment": 0,
     "code": 1366
@@ -496,6 +514,12 @@
     "comment": 0,
     "code": 17
   },
+  "snbt": {
+    "nFiles": 4,
+    "blank": 0,
+    "comment": 0,
+    "code": 236
+  },
   "9/src/cn/yapeteam/yolbi/{utils/player": {
     "nFiles": 1,
     "blank": 0,
@@ -557,10 +581,10 @@
     "code": 0
   },
   "gradle": {
-    "nFiles": 17,
+    "nFiles": 19,
     "blank": 0,
     "comment": 0,
-    "code": 925
+    "code": 1001
   },
   "SF": {
     "nFiles": 1,
