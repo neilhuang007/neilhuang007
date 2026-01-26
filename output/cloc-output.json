@@ -1,14 +1,18 @@
 {
   "header": {
     "cloc_version": "git-stats-1.0",
-    "generated_at": "2026-01-25 02:05:34",
+    "generated_at": "2026-01-26 14:44:55",
     "report_source": "git log --numstat"
   },
   "SUM": {
     "blank": 0,
     "comment": 0,
-    "code": 5119249,
-    "nFiles": 77979
+    "code": 3769062,
+    "nFiles": 39274
+  },
+  "commits": {
+    "user": 1941,
+    "total": 5880
   },
   "black": {
     "nFiles": 656,
@@ -112,12 +116,6 @@
     "comment": 0,
     "code": 168
   },
-  "srg": {
-    "nFiles": 9,
-    "blank": 0,
-    "comment": 0,
-    "code": 352795
-  },
   "backup": {
     "nFiles": 4,
     "blank": 0,
@@ -173,10 +171,10 @@
     "code": 32
   },
   "JavaScript": {
-    "nFiles": 2615,
+    "nFiles": 2629,
     "blank": 0,
     "comment": 0,
-    "code": 261403
+    "code": 263979
   },
   "def": {
     "nFiles": 15,
@@ -184,23 +182,11 @@
     "comment": 0,
     "code": 534
   },
-  "log": {
-    "nFiles": 21,
-    "blank": 0,
-    "comment": 0,
-    "code": 13915
-  },
   "Java": {
-    "nFiles": 27645,
+    "nFiles": 27646,
     "blank": 0,
     "comment": 0,
-    "code": 3143540
-  },
-  "no_extension": {
-    "nFiles": 5334,
-    "blank": 0,
-    "comment": 0,
-    "code": 285410
+    "code": 3143542
   },
   "1/src/cn/yapeteam/yolbi/module/impl/movement": {
     "nFiles": 4,
@@ -286,12 +272,6 @@
     "comment": 0,
     "code": 51
   },
-  "lang": {
-    "nFiles": 278,
-    "blank": 0,
-    "comment": 0,
-    "code": 163084
-  },
   "9/src/cn/yapeteam/yolbi/{font": {
     "nFiles": 3,
     "blank": 0,
@@ -305,10 +285,10 @@
     "code": 1840
   },
   "gitignore": {
-    "nFiles": 123,
+    "nFiles": 125,
     "blank": 0,
     "comment": 0,
-    "code": 1718
+    "code": 1724
   },
   "otf": {
     "nFiles": 2,
@@ -383,10 +363,10 @@
     "code": 12
   },
   "bat": {
-    "nFiles": 37,
+    "nFiles": 39,
     "blank": 0,
     "comment": 0,
-    "code": 1493
+    "code": 1569
   },
   "mdx": {
     "nFiles": 304,
@@ -616,12 +596,6 @@
     "comment": 0,
     "code": 0
   },
-  "lock": {
-    "nFiles": 7,
-    "blank": 0,
-    "comment": 0,
-    "code": 2576
-  },
   "INI": {
     "nFiles": 39,
     "blank": 0,
@@ -682,12 +656,6 @@
     "comment": 0,
     "code": 6
   },
-  "nbt": {
-    "nFiles": 10,
-    "blank": 0,
-    "comment": 0,
-    "code": 164
-  },
   "ps1": {
     "nFiles": 5,
     "blank": 0,
@@ -705,12 +673,6 @@
     "blank": 0,
     "comment": 0,
     "code": 6
-  },
-  "white": {
-    "nFiles": 32830,
-    "blank": 0,
-    "comment": 0,
-    "code": 532994
   },
   "prettierignore": {
     "nFiles": 2,
@@ -767,10 +729,10 @@
     "code": 1242
   },
   "example": {
-    "nFiles": 26,
+    "nFiles": 28,
     "blank": 0,
     "comment": 0,
-    "code": 214
+    "code": 248
   },
   "fsh": {
     "nFiles": 225,
@@ -801,12 +763,6 @@
     "blank": 0,
     "comment": 0,
     "code": 11
-  },
-  "mcmeta": {
-    "nFiles": 237,
-    "blank": 0,
-    "comment": 0,
-    "code": 1943
   },
   "Rust": {
     "nFiles": 10,
