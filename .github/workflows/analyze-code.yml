@@ -77,6 +77,10 @@ jobs:
             echo "[$(date +'%Y-%m-%d %H:%M:%S')] $*"
           }
 
+          # Initialize commit counters
+          TOTAL_USER_COMMITS=0
+          TOTAL_ALL_COMMITS=0
+
           # Count total contributors across all repos
           log "Analyzing repository contributors..."
           TOTAL_CONTRIBUTORS=0
@@ -97,6 +101,27 @@ jobs:
           if [ "$TOTAL_CONTRIBUTORS" -le 1 ]; then
             log "Single contributor detected - counting all code (fast mode)"
             cloc . --json --report-file=../output/cloc-output.json --exclude-lang="${IGNORE_LANGS}"
+
+            # Count commits for single contributor (all commits are user's)
+            log "Counting commits..."
+            for REPO_DIR in */; do
+              if [ -d "$REPO_DIR/.git" ]; then
+                cd "$REPO_DIR"
+                REPO_COMMITS=$(git log --all --oneline 2>/dev/null | wc -l)
+                TOTAL_USER_COMMITS=$((TOTAL_USER_COMMITS + REPO_COMMITS))
+                TOTAL_ALL_COMMITS=$((TOTAL_ALL_COMMITS + REPO_COMMITS))
+                cd ..
+              fi
+            done
+            log "✅ Single contributor commits: $TOTAL_USER_COMMITS"
+
+            # Add commit stats to cloc output
+            cd ..
+            jq --argjson user_commits "$TOTAL_USER_COMMITS" \
+               --argjson total_commits "$TOTAL_ALL_COMMITS" \
+               '. + {commits: {user: $user_commits, total: $total_commits}}' \
+               output/cloc-output.json > output/cloc-output.json.tmp && \
+               mv output/cloc-output.json.tmp output/cloc-output.json
           else
             # Multiple contributors - filter by author email
             log "Multiple contributors detected - filtering by author"
@@ -147,22 +172,26 @@ jobs:
               REPO_COUNT=$((REPO_COUNT + 1))
 
               # Check user's commit percentage for logging
-              TOTAL_COMMITS=$(git log --all --oneline | wc -l)
+              REPO_TOTAL_COMMITS=$(git log --all --oneline | wc -l)
 
               # Count user commits by checking each email separately
-              USER_COMMITS=0
+              REPO_USER_COMMITS=0
               for email in "${EMAILS[@]}"; do
                 COUNT=$(git log --all --author="$email" --oneline 2>/dev/null | wc -l || echo "0")
-                USER_COMMITS=$((USER_COMMITS + COUNT))
+                REPO_USER_COMMITS=$((REPO_USER_COMMITS + COUNT))
               done
 
-              if [ "$TOTAL_COMMITS" -gt 0 ]; then
-                USER_PERCENT=$((100 * USER_COMMITS / TOTAL_COMMITS))
+              # Aggregate to global counters
+              TOTAL_USER_COMMITS=$((TOTAL_USER_COMMITS + REPO_USER_COMMITS))
+              TOTAL_ALL_COMMITS=$((TOTAL_ALL_COMMITS + REPO_TOTAL_COMMITS))
+
+              if [ "$REPO_TOTAL_COMMITS" -gt 0 ]; then
+                USER_PERCENT=$((100 * REPO_USER_COMMITS / REPO_TOTAL_COMMITS))
               else
                 USER_PERCENT=0
               fi
 
-              log "📂 Processing $REPO_DIR (${USER_PERCENT}% commits, $USER_COMMITS/$TOTAL_COMMITS)..."
+              log "📂 Processing $REPO_DIR (${USER_PERCENT}% commits, $REPO_USER_COMMITS/$REPO_TOTAL_COMMITS)..."
 
               # NEW EFFICIENT ALGORITHM: Use git diff to count lines directly
               # Get all commits by user and count added lines per file
@@ -170,11 +199,11 @@ jobs:
               # Build email grep pattern for faster filtering
               EMAIL_PATTERN=$(IFS='|'; echo "${EMAILS[*]}")
 
-              # Get all user commits
-              USER_COMMITS=$(git log --all --format='%H' --author-regexp --grep="$EMAIL_PATTERN" --all-match 2>/dev/null || \
+              # Get all user commit hashes for line counting
+              USER_COMMIT_HASHES=$(git log --all --format='%H' --author-regexp --grep="$EMAIL_PATTERN" --all-match 2>/dev/null || \
                              git log --all --format='%H' $(printf -- '--author=%s ' "${EMAILS[@]}") 2>/dev/null || true)
 
-              if [ -z "$USER_COMMITS" ]; then
+              if [ -z "$USER_COMMIT_HASHES" ]; then
                 log "  No commits found for user emails"
                 cd ..
                 continue
@@ -269,6 +298,7 @@ jobs:
             done
 
             log "Generating cloc-compatible JSON output..."
+            log "📊 Total commits: $TOTAL_ALL_COMMITS (user: $TOTAL_USER_COMMITS)"
 
             # Use jq to generate valid JSON (avoids escaping issues)
             TIMESTAMP=$(date -u +'%Y-%m-%d %H:%M:%S')
@@ -278,6 +308,8 @@ jobs:
               --arg timestamp "$TIMESTAMP" \
               --argjson total_code "$TOTAL_CODE" \
               --argjson total_files "$TOTAL_FILES" \
+              --argjson user_commits "$TOTAL_USER_COMMITS" \
+              --argjson total_commits "$TOTAL_ALL_COMMITS" \
               '{
                 header: {
                   cloc_version: "git-stats-1.0",
@@ -289,6 +321,10 @@ jobs:
                   comment: 0,
                   code: $total_code,
                   nFiles: $total_files
+                },
+                commits: {
+                  user: $user_commits,
+                  total: $total_commits
                 }
               }' > output/cloc-output.json
 
@@ -339,12 +375,14 @@ jobs:
           export LC_ALL="en_US.UTF-8"
           export LANG="en_US.UTF-8"
 
-          # Grab total from cloc
+          # Grab totals from cloc
           TOTAL_LINES=$(jq '.SUM.code // 0' output/cloc-output.json)
+          USER_COMMITS=$(jq '.commits.user // 0' output/cloc-output.json)
+          TOTAL_COMMITS=$(jq '.commits.total // 0' output/cloc-output.json)
 
           # Get top 5 languages by line count
           TOP_5_LANGS=$(jq -r 'to_entries
-            | map(select(.key != "header" and .key != "SUM"))
+            | map(select(.key != "header" and .key != "SUM" and .key != "commits"))
             | sort_by(-.value.code)
             | .[0:5]
             | .[]
@@ -383,14 +421,24 @@ jobs:
             FORMATTED_BREAKDOWN+=$(printf "%-12s --> %s lines (%s%%)\n" "Others" "$FORMATTED_OTHER" "$OTHER_PERCENTAGE")$'\n'
           fi
 
-          # Format total ONCE (do not overwrite later)
+          # Format totals ONCE (do not overwrite later)
           FORMATTED_TOTAL=$(format_number "$TOTAL_LINES")
+          FORMATTED_USER_COMMITS=$(format_number "$USER_COMMITS")
+          FORMATTED_TOTAL_COMMITS=$(format_number "$TOTAL_COMMITS")
+
+          # Calculate commit percentage
+          if [ "$TOTAL_COMMITS" -gt 0 ]; then
+            COMMIT_PERCENT=$(awk "BEGIN {printf \"%.1f\", ($USER_COMMITS / $TOTAL_COMMITS) * 100}")
+          else
+            COMMIT_PERCENT="0.0"
+          fi
 
           CODE_BLOCK="\`\`\`
           [ LANGUAGES BREAKDOWN ]
 
           $FORMATTED_BREAKDOWN
           [ TOTAL LINES OF CODE: $FORMATTED_TOTAL ]
+          [ COMMITS: $FORMATTED_USER_COMMITS personal / $FORMATTED_TOTAL_COMMITS total (${COMMIT_PERCENT}%) ]
           \`\`\`"
 
           # Replace content between markers. Requires these in README.md:
