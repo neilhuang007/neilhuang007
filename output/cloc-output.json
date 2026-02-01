@@ -1,18 +1,18 @@
 {
   "header": {
     "cloc_version": "git-stats-1.0",
-    "generated_at": "2026-01-26 14:44:55",
+    "generated_at": "2026-02-01 02:38:09",
     "report_source": "git log --numstat"
   },
   "SUM": {
     "blank": 0,
     "comment": 0,
-    "code": 3769062,
-    "nFiles": 39274
+    "code": 3787642,
+    "nFiles": 39454
   },
   "commits": {
-    "user": 1941,
-    "total": 5880
+    "user": 1959,
+    "total": 5898
   },
   "black": {
     "nFiles": 656,
@@ -21,10 +21,10 @@
     "code": 8101
   },
   "Python": {
-    "nFiles": 470,
+    "nFiles": 482,
     "blank": 0,
     "comment": 0,
-    "code": 44553
+    "code": 45223
   },
   "9/src/cn/yapeteam/yolbi/{event": {
     "nFiles": 1,
@@ -171,10 +171,10 @@
     "code": 32
   },
   "JavaScript": {
-    "nFiles": 2629,
+    "nFiles": 2637,
     "blank": 0,
     "comment": 0,
-    "code": 263979
+    "code": 263993
   },
   "def": {
     "nFiles": 15,
@@ -183,10 +183,10 @@
     "code": 534
   },
   "Java": {
-    "nFiles": 27646,
+    "nFiles": 27744,
     "blank": 0,
     "comment": 0,
-    "code": 3143542
+    "code": 3159000
   },
   "1/src/cn/yapeteam/yolbi/module/impl/movement": {
     "nFiles": 4,
@@ -285,10 +285,10 @@
     "code": 1840
   },
   "gitignore": {
-    "nFiles": 125,
+    "nFiles": 127,
     "blank": 0,
     "comment": 0,
-    "code": 1724
+    "code": 1728
   },
   "otf": {
     "nFiles": 2,
@@ -363,16 +363,16 @@
     "code": 12
   },
   "bat": {
-    "nFiles": 39,
+    "nFiles": 41,
     "blank": 0,
     "comment": 0,
-    "code": 1569
+    "code": 1571
   },
   "mdx": {
-    "nFiles": 304,
+    "nFiles": 360,
     "blank": 0,
     "comment": 0,
-    "code": 26228
+    "code": 28660
   },
   "manifest": {
     "nFiles": 5,
@@ -579,7 +579,7 @@
     "code": 0
   },
   "jpg": {
-    "nFiles": 6,
+    "nFiles": 8,
     "blank": 0,
     "comment": 0,
     "code": 0
