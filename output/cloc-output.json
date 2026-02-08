@@ -1,18 +1,18 @@
 {
   "header": {
     "cloc_version": "git-stats-1.0",
-    "generated_at": "2026-02-01 02:38:09",
+    "generated_at": "2026-02-08 02:43:25",
     "report_source": "git log --numstat"
   },
   "SUM": {
     "blank": 0,
     "comment": 0,
-    "code": 3787642,
-    "nFiles": 39454
+    "code": 3809173,
+    "nFiles": 39611
   },
   "commits": {
-    "user": 1959,
-    "total": 5898
+    "user": 1993,
+    "total": 5960
   },
   "black": {
     "nFiles": 656,
@@ -81,10 +81,10 @@
     "code": 195
   },
   "TypeScript": {
-    "nFiles": 914,
+    "nFiles": 942,
     "blank": 0,
     "comment": 0,
-    "code": 70020
+    "code": 71352
   },
   "2/src/map": {
     "nFiles": 1,
@@ -171,10 +171,10 @@
     "code": 32
   },
   "JavaScript": {
-    "nFiles": 2637,
+    "nFiles": 2655,
     "blank": 0,
     "comment": 0,
-    "code": 263993
+    "code": 267315
   },
   "def": {
     "nFiles": 15,
@@ -183,10 +183,10 @@
     "code": 534
   },
   "Java": {
-    "nFiles": 27744,
+    "nFiles": 27787,
     "blank": 0,
     "comment": 0,
-    "code": 3159000
+    "code": 3167615
   },
   "1/src/cn/yapeteam/yolbi/module/impl/movement": {
     "nFiles": 4,
@@ -231,10 +231,10 @@
     "code": 96
   },
   "C/C++ Header": {
-    "nFiles": 375,
+    "nFiles": 379,
     "blank": 0,
     "comment": 0,
-    "code": 127575
+    "code": 127607
   },
   "buf": {
     "nFiles": 8,
@@ -285,10 +285,10 @@
     "code": 1840
   },
   "gitignore": {
-    "nFiles": 127,
+    "nFiles": 129,
     "blank": 0,
     "comment": 0,
-    "code": 1728
+    "code": 1812
   },
   "otf": {
     "nFiles": 2,
@@ -301,6 +301,12 @@
     "blank": 0,
     "comment": 0,
     "code": 520
+  },
+  "svelte": {
+    "nFiles": 34,
+    "blank": 0,
+    "comment": 0,
+    "code": 7808
   },
   "ahk": {
     "nFiles": 16,
@@ -399,10 +405,10 @@
     "code": 174
   },
   "C++": {
-    "nFiles": 7,
+    "nFiles": 25,
     "blank": 0,
     "comment": 0,
-    "code": 3344
+    "code": 3406
   },
   "1/src/cn/yapeteam/yolbi/utils/{": {
     "nFiles": 8,
@@ -765,9 +771,9 @@
     "code": 11
   },
   "Rust": {
-    "nFiles": 10,
+    "nFiles": 20,
     "blank": 0,
     "comment": 0,
-    "code": 74
+    "code": 350
   }
 }
