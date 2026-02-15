@@ -54,13 +54,13 @@
 ```
 [ LANGUAGES BREAKDOWN ]
 
-Java         --> 3,167,615 lines (83.2%)
-JavaScript   --> 267,315 lines (7.0%)
-C/C++ Header --> 127,607 lines (3.3%)
-TypeScript   --> 71,352 lines (1.9%)
-Python       --> 45,223 lines (1.2%)
-Others       --> 130,061 lines (3.4%)
+Java         --> 3,179,536 lines (83.1%)
+JavaScript   --> 269,935 lines (7.1%)
+C/C++ Header --> 127,617 lines (3.3%)
+TypeScript   --> 71,874 lines (1.9%)
+Python       --> 45,225 lines (1.2%)
+Others       --> 132,087 lines (3.5%)
 
-[ TOTAL LINES OF CODE: 3,809,173 ]
-[ COMMITS: 1,993 personal / 5,960 total (33.4%) ]
+[ TOTAL LINES OF CODE: 3,826,274 ]
+[ COMMITS: 2,031 personal / 6,064 total (33.5%) ]
 ```
