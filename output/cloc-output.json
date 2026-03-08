@@ -1,18 +1,18 @@
 {
   "header": {
     "cloc_version": "git-stats-1.0",
-    "generated_at": "2026-03-01 02:33:56",
+    "generated_at": "2026-03-08 02:25:07",
     "report_source": "git log --numstat"
   },
   "SUM": {
     "blank": 0,
     "comment": 0,
-    "code": 3828745,
-    "nFiles": 39840
+    "code": 3729315,
+    "nFiles": 41304
   },
   "commits": {
-    "user": 2043,
-    "total": 6191
+    "user": 1936,
+    "total": 5243
   },
   "black": {
     "nFiles": 656,
@@ -21,10 +21,10 @@
     "code": 8101
   },
   "Python": {
-    "nFiles": 484,
+    "nFiles": 490,
     "blank": 0,
     "comment": 0,
-    "code": 45225
+    "code": 45395
   },
   "9/src/cn/yapeteam/yolbi/{event": {
     "nFiles": 1,
@@ -33,10 +33,10 @@
     "code": 3
   },
   "vsh": {
-    "nFiles": 99,
+    "nFiles": 518,
     "blank": 0,
     "comment": 0,
-    "code": 1447
+    "code": 1964
   },
   "kts": {
     "nFiles": 4,
@@ -45,10 +45,10 @@
     "code": 216
   },
   "MF": {
-    "nFiles": 7,
+    "nFiles": 28,
     "blank": 0,
     "comment": 0,
-    "code": 37
+    "code": 89
   },
   "disabled": {
     "nFiles": 12,
@@ -73,12 +73,6 @@
     "blank": 0,
     "comment": 0,
     "code": 402
-  },
-  "fnt": {
-    "nFiles": 1,
-    "blank": 0,
-    "comment": 0,
-    "code": 195
   },
   "TypeScript": {
     "nFiles": 956,
@@ -135,10 +129,10 @@
     "code": 0
   },
   "glsl": {
-    "nFiles": 34,
+    "nFiles": 748,
     "blank": 0,
     "comment": 0,
-    "code": 1050
+    "code": 27496
   },
   "db": {
     "nFiles": 7,
@@ -171,10 +165,10 @@
     "code": 32
   },
   "JavaScript": {
-    "nFiles": 2705,
+    "nFiles": 2712,
     "blank": 0,
     "comment": 0,
-    "code": 272405
+    "code": 273269
   },
   "def": {
     "nFiles": 15,
@@ -183,16 +177,16 @@
     "code": 534
   },
   "Java": {
-    "nFiles": 27902,
+    "nFiles": 25004,
     "blank": 0,
     "comment": 0,
-    "code": 3179536
+    "code": 2674488
   },
-  "1/src/cn/yapeteam/yolbi/module/impl/movement": {
-    "nFiles": 4,
+  "fx": {
+    "nFiles": 64,
     "blank": 0,
     "comment": 0,
-    "code": 2
+    "code": 11998
   },
   "9/src/main/java/dev/haedus/core/{notification": {
     "nFiles": 1,
@@ -225,16 +219,22 @@
     "code": 25
   },
   "1": {
-    "nFiles": 118,
+    "nFiles": 2254,
     "blank": 0,
     "comment": 0,
-    "code": 96
+    "code": 187342
   },
   "C/C++ Header": {
     "nFiles": 381,
     "blank": 0,
     "comment": 0,
     "code": 127617
+  },
+  "alias": {
+    "nFiles": 84,
+    "blank": 0,
+    "comment": 0,
+    "code": 112
   },
   "buf": {
     "nFiles": 8,
@@ -243,10 +243,10 @@
     "code": 0
   },
   "C": {
-    "nFiles": 31,
+    "nFiles": 28,
     "blank": 0,
     "comment": 0,
-    "code": 5629
+    "code": 5595
   },
   "cmake/api/v1/query/cmakeFiles-v1": {
     "nFiles": 2,
@@ -284,11 +284,17 @@
     "comment": 0,
     "code": 1840
   },
-  "gitignore": {
-    "nFiles": 131,
+  "csh": {
+    "nFiles": 12,
     "blank": 0,
     "comment": 0,
-    "code": 1826
+    "code": 0
+  },
+  "gitignore": {
+    "nFiles": 136,
+    "blank": 0,
+    "comment": 0,
+    "code": 1896
   },
   "otf": {
     "nFiles": 2,
@@ -326,11 +332,11 @@
     "comment": 0,
     "code": 8
   },
-  "1/src/cn/yapeteam/yolbi/module/impl/combat/1": {
-    "nFiles": 2,
+  "pom": {
+    "nFiles": 432,
     "blank": 0,
     "comment": 0,
-    "code": 1
+    "code": 1728
   },
   "reduce/LICENSE": {
     "nFiles": 3,
@@ -343,12 +349,6 @@
     "blank": 0,
     "comment": 0,
     "code": 516
-  },
-  "shader": {
-    "nFiles": 3,
-    "blank": 0,
-    "comment": 0,
-    "code": 96
   },
   "9/src/main/java/dev/haedus/core/{": {
     "nFiles": 18,
@@ -369,10 +369,10 @@
     "code": 12
   },
   "bat": {
-    "nFiles": 43,
+    "nFiles": 45,
     "blank": 0,
     "comment": 0,
-    "code": 1572
+    "code": 1760
   },
   "mdx": {
     "nFiles": 392,
@@ -513,7 +513,7 @@
     "code": 4
   },
   "bin": {
-    "nFiles": 2,
+    "nFiles": 10,
     "blank": 0,
     "comment": 0,
     "code": 0
@@ -523,12 +523,6 @@
     "blank": 0,
     "comment": 0,
     "code": 15
-  },
-  "1/src/cn/yapeteam/yolbi/module/impl/movement/a": {
-    "nFiles": 1,
-    "blank": 0,
-    "comment": 0,
-    "code": 1
   },
   "cmake/api/v1/query/codemodel-v2": {
     "nFiles": 2,
@@ -567,10 +561,10 @@
     "code": 0
   },
   "gradle": {
-    "nFiles": 19,
+    "nFiles": 23,
     "blank": 0,
     "comment": 0,
-    "code": 1001
+    "code": 1469
   },
   "SF": {
     "nFiles": 1,
@@ -603,16 +597,16 @@
     "code": 0
   },
   "INI": {
-    "nFiles": 39,
+    "nFiles": 43,
     "blank": 0,
     "comment": 0,
-    "code": 1243
+    "code": 1265
   },
   "iml": {
-    "nFiles": 104,
+    "nFiles": 109,
     "blank": 0,
     "comment": 0,
-    "code": 954
+    "code": 1057
   },
   "frag": {
     "nFiles": 53,
@@ -625,6 +619,12 @@
     "blank": 0,
     "comment": 0,
     "code": 12
+  },
+  "tiny": {
+    "nFiles": 4,
+    "blank": 0,
+    "comment": 0,
+    "code": 175690
   },
   "9/src/cn/yapeteam/yolbi/utils/{": {
     "nFiles": 28,
@@ -639,7 +639,7 @@
     "code": 5
   },
   "png": {
-    "nFiles": 3911,
+    "nFiles": 3919,
     "blank": 0,
     "comment": 0,
     "code": 15
@@ -662,11 +662,17 @@
     "comment": 0,
     "code": 6
   },
-  "ps1": {
-    "nFiles": 5,
+  "mca": {
+    "nFiles": 20,
     "blank": 0,
     "comment": 0,
-    "code": 88
+    "code": 0
+  },
+  "ps1": {
+    "nFiles": 7,
+    "blank": 0,
+    "comment": 0,
+    "code": 176
   },
   "npmignore": {
     "nFiles": 6,
@@ -699,10 +705,10 @@
     "code": 3520
   },
   "gitattributes": {
-    "nFiles": 27,
+    "nFiles": 29,
     "blank": 0,
     "comment": 0,
-    "code": 79
+    "code": 83
   },
   "icls": {
     "nFiles": 2,
@@ -734,6 +740,12 @@
     "comment": 0,
     "code": 48
   },
+  "fxh": {
+    "nFiles": 4,
+    "blank": 0,
+    "comment": 0,
+    "code": 926
+  },
   "snap": {
     "nFiles": 2,
     "blank": 0,
@@ -747,10 +759,10 @@
     "code": 248
   },
   "fsh": {
-    "nFiles": 225,
+    "nFiles": 638,
     "blank": 0,
     "comment": 0,
-    "code": 7799
+    "code": 7054
   },
   "9/src/main/java/{com/github/haedus_industries/calculation/impl": {
     "nFiles": 2,
