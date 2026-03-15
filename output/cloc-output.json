@@ -1,18 +1,18 @@
 {
   "header": {
     "cloc_version": "git-stats-1.0",
-    "generated_at": "2026-03-08 02:25:07",
+    "generated_at": "2026-03-15 02:37:04",
     "report_source": "git log --numstat"
   },
   "SUM": {
     "blank": 0,
     "comment": 0,
-    "code": 3729315,
-    "nFiles": 41304
+    "code": 3745789,
+    "nFiles": 41698
   },
   "commits": {
-    "user": 1936,
-    "total": 5243
+    "user": 1946,
+    "total": 5273
   },
   "black": {
     "nFiles": 656,
@@ -21,10 +21,10 @@
     "code": 8101
   },
   "Python": {
-    "nFiles": 490,
+    "nFiles": 508,
     "blank": 0,
     "comment": 0,
-    "code": 45395
+    "code": 46277
   },
   "9/src/cn/yapeteam/yolbi/{event": {
     "nFiles": 1,
@@ -33,10 +33,10 @@
     "code": 3
   },
   "vsh": {
-    "nFiles": 518,
+    "nFiles": 520,
     "blank": 0,
     "comment": 0,
-    "code": 1964
+    "code": 2000
   },
   "kts": {
     "nFiles": 4,
@@ -129,10 +129,10 @@
     "code": 0
   },
   "glsl": {
-    "nFiles": 748,
+    "nFiles": 794,
     "blank": 0,
     "comment": 0,
-    "code": 27496
+    "code": 30012
   },
   "db": {
     "nFiles": 7,
@@ -177,10 +177,10 @@
     "code": 534
   },
   "Java": {
-    "nFiles": 25004,
+    "nFiles": 25314,
     "blank": 0,
     "comment": 0,
-    "code": 2674488
+    "code": 2685514
   },
   "fx": {
     "nFiles": 64,
@@ -561,10 +561,10 @@
     "code": 0
   },
   "gradle": {
-    "nFiles": 23,
+    "nFiles": 25,
     "blank": 0,
     "comment": 0,
-    "code": 1469
+    "code": 1541
   },
   "SF": {
     "nFiles": 1,
@@ -669,10 +669,10 @@
     "code": 0
   },
   "ps1": {
-    "nFiles": 7,
+    "nFiles": 9,
     "blank": 0,
     "comment": 0,
-    "code": 176
+    "code": 776
   },
   "npmignore": {
     "nFiles": 6,
@@ -759,10 +759,10 @@
     "code": 248
   },
   "fsh": {
-    "nFiles": 638,
+    "nFiles": 652,
     "blank": 0,
     "comment": 0,
-    "code": 7054
+    "code": 8396
   },
   "9/src/main/java/{com/github/haedus_industries/calculation/impl": {
     "nFiles": 2,
