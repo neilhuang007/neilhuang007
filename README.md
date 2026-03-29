@@ -54,13 +54,13 @@
 ```
 [ LANGUAGES BREAKDOWN ]
 
-Java         --> 2,714,956 lines (71.3%)
-JavaScript   --> 273,269 lines (7.2%)
+Java         --> 2,718,198 lines (71.2%)
+JavaScript   --> 273,657 lines (7.2%)
 1            --> 187,342 lines (4.9%)
 tiny         --> 175,690 lines (4.6%)
 C/C++ Header --> 127,617 lines (3.3%)
-Others       --> 331,497 lines (8.7%)
+Others       --> 333,093 lines (8.7%)
 
-[ TOTAL LINES OF CODE: 3,810,371 ]
-[ COMMITS: 1,974 personal / 5,298 total (37.3%) ]
+[ TOTAL LINES OF CODE: 3,815,597 ]
+[ COMMITS: 1,996 personal / 5,348 total (37.3%) ]
 ```
