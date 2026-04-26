@@ -1,18 +1,18 @@
 {
   "header": {
     "cloc_version": "git-stats-1.0",
-    "generated_at": "2026-04-19 02:52:38",
+    "generated_at": "2026-04-26 02:55:00",
     "report_source": "git log --numstat"
   },
   "SUM": {
     "blank": 0,
     "comment": 0,
-    "code": 3923418,
-    "nFiles": 48210
+    "code": 3987466,
+    "nFiles": 50058
   },
   "commits": {
-    "user": 3342,
-    "total": 6713
+    "user": 3390,
+    "total": 6767
   },
   "black": {
     "nFiles": 656,
@@ -21,10 +21,10 @@
     "code": 8101
   },
   "Python": {
-    "nFiles": 551,
+    "nFiles": 587,
     "blank": 0,
     "comment": 0,
-    "code": 46509
+    "code": 48437
   },
   "comp": {
     "nFiles": 171,
@@ -39,7 +39,7 @@
     "code": 3
   },
   "vsh": {
-    "nFiles": 550,
+    "nFiles": 554,
     "blank": 0,
     "comment": 0,
     "code": 2131
@@ -135,10 +135,10 @@
     "code": 0
   },
   "glsl": {
-    "nFiles": 1407,
+    "nFiles": 2203,
     "blank": 0,
     "comment": 0,
-    "code": 65212
+    "code": 103688
   },
   "db": {
     "nFiles": 7,
@@ -183,10 +183,10 @@
     "code": 534
   },
   "Java": {
-    "nFiles": 29931,
+    "nFiles": 30603,
     "blank": 0,
     "comment": 0,
-    "code": 2795271
+    "code": 2815141
   },
   "fx": {
     "nFiles": 64,
@@ -303,7 +303,7 @@
     "code": 0
   },
   "gitignore": {
-    "nFiles": 141,
+    "nFiles": 143,
     "blank": 0,
     "comment": 0,
     "code": 1923
@@ -537,10 +537,10 @@
     "code": 0
   },
   "gradle": {
-    "nFiles": 170,
+    "nFiles": 174,
     "blank": 0,
     "comment": 0,
-    "code": 2746
+    "code": 2824
   },
   "SF": {
     "nFiles": 1,
@@ -657,10 +657,10 @@
     "code": 0
   },
   "ps1": {
-    "nFiles": 37,
+    "nFiles": 39,
     "blank": 0,
     "comment": 0,
-    "code": 2452
+    "code": 2470
   },
   "npmignore": {
     "nFiles": 6,
@@ -747,10 +747,10 @@
     "code": 248
   },
   "fsh": {
-    "nFiles": 1292,
+    "nFiles": 1624,
     "blank": 0,
     "comment": 0,
-    "code": 32252
+    "code": 35930
   },
   "9/src/main/java/{com/github/haedus_industries/calculation/impl": {
     "nFiles": 2,
