@@ -1,18 +1,18 @@
 {
   "header": {
     "cloc_version": "git-stats-1.0",
-    "generated_at": "2026-05-17 03:38:48",
+    "generated_at": "2026-05-24 03:45:56",
     "report_source": "git log --numstat"
   },
   "SUM": {
     "blank": 0,
     "comment": 0,
-    "code": 4071806,
-    "nFiles": 51584
+    "code": 4100356,
+    "nFiles": 51944
   },
   "commits": {
-    "user": 3538,
-    "total": 6920
+    "user": 3558,
+    "total": 6971
   },
   "black": {
     "nFiles": 656,
@@ -87,10 +87,10 @@
     "code": 402
   },
   "TypeScript": {
-    "nFiles": 1372,
+    "nFiles": 1466,
     "blank": 0,
     "comment": 0,
-    "code": 107280
+    "code": 111348
   },
   "2/src/map": {
     "nFiles": 1,
@@ -141,10 +141,10 @@
     "code": 0
   },
   "glsl": {
-    "nFiles": 2661,
+    "nFiles": 2721,
     "blank": 0,
     "comment": 0,
-    "code": 118902
+    "code": 122778
   },
   "db": {
     "nFiles": 7,
@@ -177,10 +177,10 @@
     "code": 32
   },
   "JavaScript": {
-    "nFiles": 2711,
+    "nFiles": 2715,
     "blank": 0,
     "comment": 0,
-    "code": 275920
+    "code": 275956
   },
   "def": {
     "nFiles": 15,
@@ -189,10 +189,10 @@
     "code": 534
   },
   "Java": {
-    "nFiles": 30917,
+    "nFiles": 31071,
     "blank": 0,
     "comment": 0,
-    "code": 2827881
+    "code": 2848137
   },
   "fx": {
     "nFiles": 64,
@@ -753,16 +753,16 @@
     "code": 1242
   },
   "example": {
-    "nFiles": 36,
+    "nFiles": 40,
     "blank": 0,
     "comment": 0,
-    "code": 296
+    "code": 450
   },
   "fsh": {
-    "nFiles": 1854,
+    "nFiles": 1898,
     "blank": 0,
     "comment": 0,
-    "code": 45536
+    "code": 45696
   },
   "9/src/main/java/{com/github/haedus_industries/calculation/impl": {
     "nFiles": 2,
