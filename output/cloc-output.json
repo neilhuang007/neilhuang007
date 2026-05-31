@@ -1,18 +1,18 @@
 {
   "header": {
     "cloc_version": "git-stats-1.0",
-    "generated_at": "2026-05-24 03:45:56",
+    "generated_at": "2026-05-31 04:02:10",
     "report_source": "git log --numstat"
   },
   "SUM": {
     "blank": 0,
     "comment": 0,
-    "code": 4100356,
-    "nFiles": 51944
+    "code": 4049018,
+    "nFiles": 49948
   },
   "commits": {
-    "user": 3558,
-    "total": 6971
+    "user": 3430,
+    "total": 6734
   },
   "black": {
     "nFiles": 656,
@@ -38,17 +38,11 @@
     "comment": 0,
     "code": 2861
   },
-  "9/src/cn/yapeteam/yolbi/{event": {
-    "nFiles": 1,
-    "blank": 0,
-    "comment": 0,
-    "code": 3
-  },
   "vsh": {
-    "nFiles": 554,
+    "nFiles": 553,
     "blank": 0,
     "comment": 0,
-    "code": 2131
+    "code": 2125
   },
   "kts": {
     "nFiles": 4,
@@ -81,28 +75,22 @@
     "code": 6
   },
   "form": {
-    "nFiles": 6,
+    "nFiles": 2,
     "blank": 0,
     "comment": 0,
-    "code": 402
+    "code": 191
   },
   "TypeScript": {
-    "nFiles": 1466,
+    "nFiles": 1492,
     "blank": 0,
     "comment": 0,
-    "code": 111348
+    "code": 111506
   },
   "2/src/map": {
     "nFiles": 1,
     "blank": 0,
     "comment": 0,
     "code": 18
-  },
-  "9/src/cn/yapeteam/yolbi/{config": {
-    "nFiles": 1,
-    "blank": 0,
-    "comment": 0,
-    "code": 2
   },
   "idea/Aeternus": {
     "nFiles": 2,
@@ -141,10 +129,10 @@
     "code": 0
   },
   "glsl": {
-    "nFiles": 2721,
+    "nFiles": 2717,
     "blank": 0,
     "comment": 0,
-    "code": 122778
+    "code": 122685
   },
   "db": {
     "nFiles": 7,
@@ -170,17 +158,11 @@
     "comment": 0,
     "code": 0
   },
-  "9/src/cn/yapeteam/yolbi/{": {
-    "nFiles": 15,
-    "blank": 0,
-    "comment": 0,
-    "code": 32
-  },
   "JavaScript": {
-    "nFiles": 2715,
+    "nFiles": 2714,
     "blank": 0,
     "comment": 0,
-    "code": 275956
+    "code": 275955
   },
   "def": {
     "nFiles": 15,
@@ -189,10 +171,10 @@
     "code": 534
   },
   "Java": {
-    "nFiles": 31071,
+    "nFiles": 29309,
     "blank": 0,
     "comment": 0,
-    "code": 2848137
+    "code": 2797728
   },
   "fx": {
     "nFiles": 64,
@@ -206,35 +188,17 @@
     "comment": 0,
     "code": 2
   },
-  "1/src/cn/yapeteam/yolbi/{config": {
-    "nFiles": 1,
-    "blank": 0,
-    "comment": 0,
-    "code": 3
-  },
-  "1/src/cn/yapeteam/yolbi/{": {
-    "nFiles": 1,
-    "blank": 0,
-    "comment": 0,
-    "code": 1
-  },
   "sfk": {
     "nFiles": 12,
     "blank": 0,
     "comment": 0,
     "code": 0
   },
-  "2": {
-    "nFiles": 28,
-    "blank": 0,
-    "comment": 0,
-    "code": 25
-  },
   "1": {
-    "nFiles": 2254,
+    "nFiles": 2136,
     "blank": 0,
     "comment": 0,
-    "code": 187342
+    "code": 187246
   },
   "C/C++ Header": {
     "nFiles": 381,
@@ -255,10 +219,10 @@
     "code": 0
   },
   "C": {
-    "nFiles": 28,
+    "nFiles": 23,
     "blank": 0,
     "comment": 0,
-    "code": 5595
+    "code": 5325
   },
   "cmake/api/v1/query/cmakeFiles-v1": {
     "nFiles": 2,
@@ -271,12 +235,6 @@
     "blank": 0,
     "comment": 0,
     "code": 0
-  },
-  "9/src/cn/yapeteam/yolbi/{bindable": {
-    "nFiles": 2,
-    "blank": 0,
-    "comment": 0,
-    "code": 3
   },
   "info": {
     "nFiles": 3,
@@ -296,12 +254,6 @@
     "comment": 0,
     "code": 93
   },
-  "9/src/cn/yapeteam/yolbi/{font": {
-    "nFiles": 3,
-    "blank": 0,
-    "comment": 0,
-    "code": 3
-  },
   "jst": {
     "nFiles": 75,
     "blank": 0,
@@ -315,10 +267,10 @@
     "code": 0
   },
   "gitignore": {
-    "nFiles": 151,
+    "nFiles": 148,
     "blank": 0,
     "comment": 0,
-    "code": 1973
+    "code": 1972
   },
   "vert": {
     "nFiles": 115,
@@ -440,12 +392,6 @@
     "comment": 0,
     "code": 3456
   },
-  "1/src/cn/yapeteam/yolbi/utils/{": {
-    "nFiles": 8,
-    "blank": 0,
-    "comment": 0,
-    "code": 20
-  },
   "get/LICENSE": {
     "nFiles": 3,
     "blank": 0,
@@ -494,23 +440,11 @@
     "comment": 0,
     "code": 236
   },
-  "9/src/cn/yapeteam/yolbi/{utils/player": {
-    "nFiles": 1,
-    "blank": 0,
-    "comment": 0,
-    "code": 4
-  },
   "bin": {
     "nFiles": 10,
     "blank": 0,
     "comment": 0,
     "code": 0
-  },
-  "9/src/cn/yapeteam/yolbi/module/impl/{ghost": {
-    "nFiles": 7,
-    "blank": 0,
-    "comment": 0,
-    "code": 15
   },
   "cmake/api/v1/query/codemodel-v2": {
     "nFiles": 2,
@@ -597,10 +531,10 @@
     "code": 1265
   },
   "iml": {
-    "nFiles": 106,
+    "nFiles": 95,
     "blank": 0,
     "comment": 0,
-    "code": 1035
+    "code": 1005
   },
   "task": {
     "nFiles": 5,
@@ -609,10 +543,10 @@
     "code": 167
   },
   "frag": {
-    "nFiles": 149,
+    "nFiles": 138,
     "blank": 0,
     "comment": 0,
-    "code": 1423
+    "code": 1200
   },
   "2/src/main/java/dev/haedus/core/utils/misc": {
     "nFiles": 2,
@@ -627,16 +561,10 @@
     "code": 175690
   },
   "9/src/cn/yapeteam/yolbi/utils/{": {
-    "nFiles": 28,
+    "nFiles": 2,
     "blank": 0,
     "comment": 0,
-    "code": 33
-  },
-  "9/src/cn/yapeteam/yolbi/{layer": {
-    "nFiles": 1,
-    "blank": 0,
-    "comment": 0,
-    "code": 5
+    "code": 2
   },
   "png": {
     "nFiles": 3919,
@@ -652,12 +580,6 @@
   },
   "vercelignore": {
     "nFiles": 2,
-    "blank": 0,
-    "comment": 0,
-    "code": 6
-  },
-  "9/src/cn/yapeteam/yolbi/module/impl/{combat": {
-    "nFiles": 6,
     "blank": 0,
     "comment": 0,
     "code": 6
@@ -727,12 +649,6 @@
     "blank": 0,
     "comment": 0,
     "code": 1018
-  },
-  "9/src/cn/yapeteam/yolbi/{module/api/manager": {
-    "nFiles": 1,
-    "blank": 0,
-    "comment": 0,
-    "code": 3
   },
   "patch": {
     "nFiles": 2,
