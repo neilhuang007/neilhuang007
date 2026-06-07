@@ -1,18 +1,18 @@
 {
   "header": {
     "cloc_version": "git-stats-1.0",
-    "generated_at": "2026-05-31 04:02:10",
+    "generated_at": "2026-06-07 04:08:03",
     "report_source": "git log --numstat"
   },
   "SUM": {
     "blank": 0,
     "comment": 0,
-    "code": 4049018,
-    "nFiles": 49948
+    "code": 4567476,
+    "nFiles": 50050
   },
   "commits": {
-    "user": 3430,
-    "total": 6734
+    "user": 3441,
+    "total": 6936
   },
   "black": {
     "nFiles": 656,
@@ -27,10 +27,10 @@
     "code": 8
   },
   "Python": {
-    "nFiles": 595,
+    "nFiles": 643,
     "blank": 0,
     "comment": 0,
-    "code": 49827
+    "code": 58783
   },
   "comp": {
     "nFiles": 171,
@@ -171,10 +171,16 @@
     "code": 534
   },
   "Java": {
-    "nFiles": 29309,
+    "nFiles": 29327,
     "blank": 0,
     "comment": 0,
-    "code": 2797728
+    "code": 2798708
+  },
+  "pdf": {
+    "nFiles": 32,
+    "blank": 0,
+    "comment": 0,
+    "code": 507926
   },
   "fx": {
     "nFiles": 64,
@@ -267,10 +273,10 @@
     "code": 0
   },
   "gitignore": {
-    "nFiles": 148,
+    "nFiles": 150,
     "blank": 0,
     "comment": 0,
-    "code": 1972
+    "code": 2062
   },
   "vert": {
     "nFiles": 115,
@@ -445,6 +451,12 @@
     "blank": 0,
     "comment": 0,
     "code": 0
+  },
+  "bib": {
+    "nFiles": 2,
+    "blank": 0,
+    "comment": 0,
+    "code": 506
   },
   "cmake/api/v1/query/codemodel-v2": {
     "nFiles": 2,
