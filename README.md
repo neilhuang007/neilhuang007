@@ -54,13 +54,13 @@
 ```
 [ LANGUAGES BREAKDOWN ]
 
-Java         --> 2,798,708 lines (61.3%)
+Java         --> 2,798,938 lines (61.3%)
 pdf          --> 507,926 lines (11.1%)
 JavaScript   --> 275,955 lines (6.0%)
 1            --> 187,246 lines (4.1%)
 tiny         --> 175,690 lines (3.8%)
-Others       --> 621,951 lines (13.6%)
+Others       --> 622,903 lines (13.6%)
 
-[ TOTAL LINES OF CODE: 4,567,476 ]
-[ COMMITS: 3,441 personal / 7,106 total (48.4%) ]
+[ TOTAL LINES OF CODE: 4,568,658 ]
+[ COMMITS: 3,447 personal / 7,142 total (48.3%) ]
 ```
