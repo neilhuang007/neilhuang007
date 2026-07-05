@@ -1,18 +1,18 @@
 {
   "header": {
     "cloc_version": "git-stats-1.0",
-    "generated_at": "2026-06-28 04:00:10",
+    "generated_at": "2026-07-05 03:34:40",
     "report_source": "git log --numstat"
   },
   "SUM": {
     "blank": 0,
     "comment": 0,
-    "code": 4568658,
-    "nFiles": 50072
+    "code": 4649851,
+    "nFiles": 50431
   },
   "commits": {
-    "user": 3447,
-    "total": 7142
+    "user": 3489,
+    "total": 7229
   },
   "black": {
     "nFiles": 656,
@@ -27,10 +27,10 @@
     "code": 8
   },
   "Python": {
-    "nFiles": 643,
+    "nFiles": 977,
     "blank": 0,
     "comment": 0,
-    "code": 58783
+    "code": 139883
   },
   "comp": {
     "nFiles": 171,
@@ -79,6 +79,12 @@
     "blank": 0,
     "comment": 0,
     "code": 191
+  },
+  "lp": {
+    "nFiles": 22,
+    "blank": 0,
+    "comment": 0,
+    "code": 288
   },
   "TypeScript": {
     "nFiles": 1506,
@@ -171,10 +177,10 @@
     "code": 534
   },
   "Java": {
-    "nFiles": 29335,
+    "nFiles": 29334,
     "blank": 0,
     "comment": 0,
-    "code": 2798938
+    "code": 2798721
   },
   "pdf": {
     "nFiles": 32,
@@ -325,6 +331,12 @@
     "blank": 0,
     "comment": 0,
     "code": 1728
+  },
+  "typed": {
+    "nFiles": 2,
+    "blank": 0,
+    "comment": 0,
+    "code": 0
   },
   "reduce/LICENSE": {
     "nFiles": 3,
@@ -589,6 +601,12 @@
     "blank": 0,
     "comment": 0,
     "code": 16
+  },
+  "qubo": {
+    "nFiles": 2,
+    "blank": 0,
+    "comment": 0,
+    "code": 22
   },
   "vercelignore": {
     "nFiles": 2,
