@@ -1,18 +1,18 @@
 {
   "header": {
     "cloc_version": "git-stats-1.0",
-    "generated_at": "2026-07-12 02:55:26",
+    "generated_at": "2026-07-19 02:51:00",
     "report_source": "git log --numstat"
   },
   "SUM": {
     "blank": 0,
     "comment": 0,
-    "code": 4656539,
-    "nFiles": 50544
+    "code": 4248840,
+    "nFiles": 51667
   },
   "commits": {
-    "user": 3504,
-    "total": 7261
+    "user": 3598,
+    "total": 7356
   },
   "black": {
     "nFiles": 656,
@@ -27,10 +27,10 @@
     "code": 8
   },
   "Python": {
-    "nFiles": 1085,
+    "nFiles": 1251,
     "blank": 0,
     "comment": 0,
-    "code": 146465
+    "code": 178643
   },
   "comp": {
     "nFiles": 171,
@@ -87,10 +87,10 @@
     "code": 288
   },
   "TypeScript": {
-    "nFiles": 1506,
+    "nFiles": 1802,
     "blank": 0,
     "comment": 0,
-    "code": 112458
+    "code": 141924
   },
   "2/src/map": {
     "nFiles": 1,
@@ -111,10 +111,10 @@
     "code": 510
   },
   "conf": {
-    "nFiles": 4,
+    "nFiles": 8,
     "blank": 0,
     "comment": 0,
-    "code": 168
+    "code": 236
   },
   "backup": {
     "nFiles": 4,
@@ -165,10 +165,10 @@
     "code": 0
   },
   "JavaScript": {
-    "nFiles": 2716,
+    "nFiles": 2750,
     "blank": 0,
     "comment": 0,
-    "code": 276057
+    "code": 280447
   },
   "def": {
     "nFiles": 15,
@@ -177,16 +177,10 @@
     "code": 534
   },
   "Java": {
-    "nFiles": 29336,
+    "nFiles": 29913,
     "blank": 0,
     "comment": 0,
-    "code": 2798723
-  },
-  "pdf": {
-    "nFiles": 32,
-    "blank": 0,
-    "comment": 0,
-    "code": 507926
+    "code": 2830048
   },
   "fx": {
     "nFiles": 64,
@@ -213,10 +207,10 @@
     "code": 187246
   },
   "C/C++ Header": {
-    "nFiles": 381,
+    "nFiles": 383,
     "blank": 0,
     "comment": 0,
-    "code": 127617
+    "code": 127619
   },
   "alias": {
     "nFiles": 84,
@@ -229,6 +223,12 @@
     "blank": 0,
     "comment": 0,
     "code": 0
+  },
+  "rules": {
+    "nFiles": 2,
+    "blank": 0,
+    "comment": 0,
+    "code": 20
   },
   "C": {
     "nFiles": 23,
@@ -279,10 +279,10 @@
     "code": 0
   },
   "gitignore": {
-    "nFiles": 150,
+    "nFiles": 162,
     "blank": 0,
     "comment": 0,
-    "code": 2062
+    "code": 2116
   },
   "vert": {
     "nFiles": 115,
@@ -405,10 +405,16 @@
     "code": 174
   },
   "C++": {
-    "nFiles": 35,
+    "nFiles": 37,
     "blank": 0,
     "comment": 0,
-    "code": 3456
+    "code": 3502
+  },
+  "timer": {
+    "nFiles": 2,
+    "blank": 0,
+    "comment": 0,
+    "code": 24
   },
   "get/LICENSE": {
     "nFiles": 3,
@@ -429,10 +435,10 @@
     "code": 0
   },
   "service": {
-    "nFiles": 8,
+    "nFiles": 18,
     "blank": 0,
     "comment": 0,
-    "code": 160
+    "code": 444
   },
   "ddi": {
     "nFiles": 2,
@@ -465,10 +471,10 @@
     "code": 0
   },
   "bib": {
-    "nFiles": 2,
+    "nFiles": 4,
     "blank": 0,
     "comment": 0,
-    "code": 506
+    "code": 598
   },
   "cmake/api/v1/query/codemodel-v2": {
     "nFiles": 2,
@@ -621,10 +627,10 @@
     "code": 0
   },
   "ps1": {
-    "nFiles": 45,
+    "nFiles": 59,
     "blank": 0,
     "comment": 0,
-    "code": 3328
+    "code": 3644
   },
   "npmignore": {
     "nFiles": 6,
@@ -651,16 +657,16 @@
     "code": 0
   },
   "Bourne Shell": {
-    "nFiles": 96,
+    "nFiles": 102,
     "blank": 0,
     "comment": 0,
-    "code": 3520
+    "code": 5004
   },
   "gitattributes": {
-    "nFiles": 28,
+    "nFiles": 32,
     "blank": 0,
     "comment": 0,
-    "code": 81
+    "code": 91
   },
   "icls": {
     "nFiles": 2,
@@ -699,10 +705,16 @@
     "code": 1242
   },
   "example": {
-    "nFiles": 40,
+    "nFiles": 54,
     "blank": 0,
     "comment": 0,
-    "code": 450
+    "code": 520
+  },
+  "SQL": {
+    "nFiles": 8,
+    "blank": 0,
+    "comment": 0,
+    "code": 398
   },
   "fsh": {
     "nFiles": 1898,
