@@ -1,18 +1,18 @@
 {
   "header": {
     "cloc_version": "git-stats-1.0",
-    "generated_at": "2026-08-30 04:09:19",
+    "generated_at": "2026-09-06 03:24:50",
     "report_source": "git log --numstat"
   },
   "SUM": {
     "blank": 0,
     "comment": 0,
-    "code": 4278357,
-    "nFiles": 51673
+    "code": 4304547,
+    "nFiles": 51833
   },
   "commits": {
-    "user": 3593,
-    "total": 7095
+    "user": 3628,
+    "total": 7141
   },
   "black": {
     "nFiles": 656,
@@ -27,10 +27,10 @@
     "code": 8
   },
   "Python": {
-    "nFiles": 1301,
+    "nFiles": 1321,
     "blank": 0,
     "comment": 0,
-    "code": 188969
+    "code": 202745
   },
   "comp": {
     "nFiles": 171,
@@ -49,6 +49,12 @@
     "blank": 0,
     "comment": 0,
     "code": 298
+  },
+  "tsv": {
+    "nFiles": 2,
+    "blank": 0,
+    "comment": 0,
+    "code": 30
   },
   "MF": {
     "nFiles": 28,
@@ -165,10 +171,10 @@
     "code": 0
   },
   "JavaScript": {
-    "nFiles": 2769,
+    "nFiles": 2787,
     "blank": 0,
     "comment": 0,
-    "code": 284137
+    "code": 285505
   },
   "def": {
     "nFiles": 15,
@@ -177,10 +183,10 @@
     "code": 534
   },
   "Java": {
-    "nFiles": 29808,
+    "nFiles": 29886,
     "blank": 0,
     "comment": 0,
-    "code": 2841073
+    "code": 2847303
   },
   "fx": {
     "nFiles": 64,
@@ -279,10 +285,10 @@
     "code": 0
   },
   "gitignore": {
-    "nFiles": 172,
+    "nFiles": 176,
     "blank": 0,
     "comment": 0,
-    "code": 2966
+    "code": 2986
   },
   "vert": {
     "nFiles": 115,
@@ -411,10 +417,10 @@
     "code": 3502
   },
   "timer": {
-    "nFiles": 4,
+    "nFiles": 6,
     "blank": 0,
     "comment": 0,
-    "code": 46
+    "code": 68
   },
   "get/LICENSE": {
     "nFiles": 3,
@@ -441,10 +447,10 @@
     "code": 28
   },
   "service": {
-    "nFiles": 26,
+    "nFiles": 28,
     "blank": 0,
     "comment": 0,
-    "code": 564
+    "code": 594
   },
   "check_cache": {
     "nFiles": 2,
@@ -615,10 +621,10 @@
     "code": 0
   },
   "ps1": {
-    "nFiles": 69,
+    "nFiles": 75,
     "blank": 0,
     "comment": 0,
-    "code": 4190
+    "code": 5614
   },
   "npmignore": {
     "nFiles": 6,
@@ -645,10 +651,10 @@
     "code": 0
   },
   "Bourne Shell": {
-    "nFiles": 120,
+    "nFiles": 148,
     "blank": 0,
     "comment": 0,
-    "code": 5884
+    "code": 9174
   },
   "gitattributes": {
     "nFiles": 32,
