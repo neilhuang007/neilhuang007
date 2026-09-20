@@ -1,18 +1,18 @@
 {
   "header": {
     "cloc_version": "git-stats-1.0",
-    "generated_at": "2026-09-13 03:42:22",
+    "generated_at": "2026-09-20 03:52:35",
     "report_source": "git log --numstat"
   },
   "SUM": {
     "blank": 0,
     "comment": 0,
-    "code": 4374719,
-    "nFiles": 61933
+    "code": 4520689,
+    "nFiles": 65392
   },
   "commits": {
-    "user": 3762,
-    "total": 7234
+    "user": 3813,
+    "total": 7268
   },
   "tmp-render/chrome-profile-c3446b0bb3224a669026db9cda096037/Default/Top": {
     "nFiles": 4,
@@ -63,10 +63,10 @@
     "code": 0
   },
   "tex": {
-    "nFiles": 880,
+    "nFiles": 1310,
     "blank": 0,
     "comment": 0,
-    "code": 26008
+    "code": 49756
   },
   "tmp-render/chrome-profile-60f0223416bd4e68aa734f01c26f81fc/Default/Segmentation": {
     "nFiles": 24,
@@ -585,10 +585,10 @@
     "code": 2
   },
   "Python": {
-    "nFiles": 1417,
+    "nFiles": 1593,
     "blank": 0,
     "comment": 0,
-    "code": 210149
+    "code": 231377
   },
   "comp": {
     "nFiles": 171,
@@ -819,10 +819,10 @@
     "code": 2
   },
   "tsv": {
-    "nFiles": 2,
+    "nFiles": 36,
     "blank": 0,
     "comment": 0,
-    "code": 30
+    "code": 44272
   },
   "MF": {
     "nFiles": 28,
@@ -1018,6 +1018,12 @@
   },
   "tmp-render/chrome-profile-8fe1e67837324cdd9e074e9595a9b7e5/Default/Network": {
     "nFiles": 4,
+    "blank": 0,
+    "comment": 0,
+    "code": 0
+  },
+  "ll": {
+    "nFiles": 34,
     "blank": 0,
     "comment": 0,
     "code": 0
@@ -1227,10 +1233,10 @@
     "code": 0
   },
   "TypeScript": {
-    "nFiles": 1808,
+    "nFiles": 2254,
     "blank": 0,
     "comment": 0,
-    "code": 141940
+    "code": 146788
   },
   "2/src/map": {
     "nFiles": 1,
@@ -1437,7 +1443,7 @@
     "code": 2
   },
   "cmake": {
-    "nFiles": 10,
+    "nFiles": 16,
     "blank": 0,
     "comment": 0,
     "code": 510
@@ -1449,10 +1455,10 @@
     "code": 0
   },
   "conf": {
-    "nFiles": 8,
+    "nFiles": 16,
     "blank": 0,
     "comment": 0,
-    "code": 236
+    "code": 290
   },
   "tmp-render/chrome-profile-522c51cb812e48adb0495e544466a34b/Default/Account": {
     "nFiles": 4,
@@ -1561,6 +1567,12 @@
     "blank": 0,
     "comment": 0,
     "code": 2
+  },
+  "in": {
+    "nFiles": 16,
+    "blank": 0,
+    "comment": 0,
+    "code": 366
   },
   "tmp-render/chrome-profile-7043b166330447de90a75abd3efc0065/Last": {
     "nFiles": 4,
@@ -2115,10 +2127,10 @@
     "code": 4
   },
   "JavaScript": {
-    "nFiles": 2795,
+    "nFiles": 2877,
     "blank": 0,
     "comment": 0,
-    "code": 289007
+    "code": 292058
   },
   "tmp-render/chrome-profile-a7b596b6eaac48beaadc996d3aabe48e/Default/discount_infos_db/LOCK": {
     "nFiles": 4,
@@ -2229,10 +2241,10 @@
     "code": 2
   },
   "Java": {
-    "nFiles": 29886,
+    "nFiles": 31660,
     "blank": 0,
     "comment": 0,
-    "code": 2847303
+    "code": 2889219
   },
   "tmp-render/chrome-profile-a7b596b6eaac48beaadc996d3aabe48e/Default/shared_proto_db/LOCK": {
     "nFiles": 4,
@@ -2769,7 +2781,7 @@
     "code": 0
   },
   "C/C++ Header": {
-    "nFiles": 383,
+    "nFiles": 501,
     "blank": 0,
     "comment": 0,
     "code": 127619
@@ -3044,17 +3056,17 @@
     "comment": 0,
     "code": 0
   },
-  "rules": {
-    "nFiles": 2,
-    "blank": 0,
-    "comment": 0,
-    "code": 20
-  },
   "tmp-render/chrome-profile-a7b596b6eaac48beaadc996d3aabe48e/Default/WebStorage/QuotaManager-journal": {
     "nFiles": 4,
     "blank": 0,
     "comment": 0,
     "code": 0
+  },
+  "rules": {
+    "nFiles": 4,
+    "blank": 0,
+    "comment": 0,
+    "code": 20
   },
   "tmp-render/chrome-profile-3290a3f876bc4b6b91f0d1a1a0f6bbb1/Default/BrowsingTopicsState": {
     "nFiles": 4,
@@ -3111,10 +3123,10 @@
     "code": 0
   },
   "C": {
-    "nFiles": 21,
+    "nFiles": 123,
     "blank": 0,
     "comment": 0,
-    "code": 5316
+    "code": 5354
   },
   "tmp-render/chrome-profile-a06b529f3bd44a55b543a47fd548077e/Default/discounts_db/LOG": {
     "nFiles": 4,
@@ -3825,10 +3837,10 @@
     "code": 0
   },
   "gitignore": {
-    "nFiles": 198,
+    "nFiles": 231,
     "blank": 0,
     "comment": 0,
-    "code": 3454
+    "code": 4023
   },
   "tmp-render/chrome-profile-a7b596b6eaac48beaadc996d3aabe48e/Default/LOCK": {
     "nFiles": 4,
@@ -4935,7 +4947,7 @@
     "code": 0
   },
   "bat": {
-    "nFiles": 53,
+    "nFiles": 57,
     "blank": 0,
     "comment": 0,
     "code": 2419
@@ -5235,7 +5247,7 @@
     "code": 2
   },
   "C++": {
-    "nFiles": 37,
+    "nFiles": 73,
     "blank": 0,
     "comment": 0,
     "code": 3502
@@ -5427,7 +5439,7 @@
     "code": 24
   },
   "timer": {
-    "nFiles": 6,
+    "nFiles": 8,
     "blank": 0,
     "comment": 0,
     "code": 68
@@ -5625,7 +5637,7 @@
     "code": 28
   },
   "service": {
-    "nFiles": 28,
+    "nFiles": 34,
     "blank": 0,
     "comment": 0,
     "code": 594
@@ -7119,10 +7131,10 @@
     "code": 0
   },
   "iml": {
-    "nFiles": 81,
+    "nFiles": 80,
     "blank": 0,
     "comment": 0,
-    "code": 966
+    "code": 954
   },
   "task": {
     "nFiles": 5,
@@ -7791,10 +7803,10 @@
     "code": 0
   },
   "vercelignore": {
-    "nFiles": 2,
+    "nFiles": 4,
     "blank": 0,
     "comment": 0,
-    "code": 6
+    "code": 26
   },
   "tmp-render/chrome-profile/Default/Affiliation": {
     "nFiles": 4,
@@ -8103,10 +8115,10 @@
     "code": 6
   },
   "ps1": {
-    "nFiles": 145,
+    "nFiles": 209,
     "blank": 0,
     "comment": 0,
-    "code": 7886
+    "code": 10080
   },
   "tmp-render/chrome-profile-c3446b0bb3224a669026db9cda096037/Default/commerce_subscription_db/LOG": {
     "nFiles": 4,
@@ -8203,6 +8215,12 @@
     "blank": 0,
     "comment": 0,
     "code": 0
+  },
+  "1/LICENSE": {
+    "nFiles": 2,
+    "blank": 0,
+    "comment": 0,
+    "code": 42
   },
   "tmp-render/chrome-profile/Default/chrome_cart_db/LOCK": {
     "nFiles": 4,
@@ -8367,7 +8385,7 @@
     "code": 0
   },
   "gitmodules": {
-    "nFiles": 6,
+    "nFiles": 8,
     "blank": 0,
     "comment": 0,
     "code": 6
@@ -8407,6 +8425,12 @@
     "blank": 0,
     "comment": 0,
     "code": 0
+  },
+  "sha256": {
+    "nFiles": 14,
+    "blank": 0,
+    "comment": 0,
+    "code": 146
   },
   "tmp-render/chrome-profile-7043b166330447de90a75abd3efc0065/Default/LOCK": {
     "nFiles": 4,
@@ -8455,6 +8479,12 @@
     "blank": 0,
     "comment": 0,
     "code": 2
+  },
+  "fixture": {
+    "nFiles": 4,
+    "blank": 0,
+    "comment": 0,
+    "code": 0
   },
   "tmp-render/chrome-profile-c3446b0bb3224a669026db9cda096037/Default/Segmentation": {
     "nFiles": 24,
@@ -8757,10 +8787,10 @@
     "code": 0
   },
   "Bourne Shell": {
-    "nFiles": 148,
+    "nFiles": 184,
     "blank": 0,
     "comment": 0,
-    "code": 9174
+    "code": 12624
   },
   "db-journal": {
     "nFiles": 200,
@@ -8805,10 +8835,10 @@
     "code": 0
   },
   "gitattributes": {
-    "nFiles": 32,
+    "nFiles": 31,
     "blank": 0,
     "comment": 0,
-    "code": 91
+    "code": 89
   },
   "tmp-render/chrome-profile/Breadcrumbs": {
     "nFiles": 4,
@@ -8822,17 +8852,17 @@
     "comment": 0,
     "code": 6
   },
-  "icls": {
-    "nFiles": 2,
-    "blank": 0,
-    "comment": 0,
-    "code": 1692
-  },
   "tmp-render/chrome-profile-8fe1e67837324cdd9e074e9595a9b7e5/Default/Network/Device": {
     "nFiles": 4,
     "blank": 0,
     "comment": 0,
     "code": 0
+  },
+  "icls": {
+    "nFiles": 4,
+    "blank": 0,
+    "comment": 0,
+    "code": 1692
   },
   "tmp-render/chrome-profile/Default/BudgetDatabase/LOCK": {
     "nFiles": 4,
@@ -9117,10 +9147,10 @@
     "code": 1242
   },
   "example": {
-    "nFiles": 56,
+    "nFiles": 62,
     "blank": 0,
     "comment": 0,
-    "code": 554
+    "code": 568
   },
   "tmp-render/chrome-profile-a7b596b6eaac48beaadc996d3aabe48e/Default/Network/Network": {
     "nFiles": 4,
@@ -9164,12 +9194,6 @@
     "comment": 0,
     "code": 0
   },
-  "SQL": {
-    "nFiles": 8,
-    "blank": 0,
-    "comment": 0,
-    "code": 398
-  },
   "tmp-render/chrome-profile-be1d796f91174442be03dee9799bcce3/Default/chrome_cart_db/LOG": {
     "nFiles": 4,
     "blank": 0,
@@ -9181,6 +9205,12 @@
     "blank": 0,
     "comment": 0,
     "code": 0
+  },
+  "SQL": {
+    "nFiles": 24,
+    "blank": 0,
+    "comment": 0,
+    "code": 398
   },
   "tmp-render/chrome-profile-a7b596b6eaac48beaadc996d3aabe48e/Default/Local": {
     "nFiles": 12,
@@ -9268,6 +9298,12 @@
   },
   "tmp-render/chrome-profile-4598e58422ce48b7b56acff64ce2feab/Default/ServerCertificate-journal": {
     "nFiles": 4,
+    "blank": 0,
+    "comment": 0,
+    "code": 0
+  },
+  "webmanifest": {
+    "nFiles": 2,
     "blank": 0,
     "comment": 0,
     "code": 0
@@ -9435,9 +9471,9 @@
     "code": 0
   },
   "chktexrc": {
-    "nFiles": 4,
+    "nFiles": 6,
     "blank": 0,
     "comment": 0,
-    "code": 116
+    "code": 174
   }
 }
