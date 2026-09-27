@@ -1,18 +1,18 @@
 {
   "header": {
     "cloc_version": "git-stats-1.0",
-    "generated_at": "2026-09-20 03:52:35",
+    "generated_at": "2026-09-27 04:11:19",
     "report_source": "git log --numstat"
   },
   "SUM": {
     "blank": 0,
     "comment": 0,
-    "code": 4520689,
-    "nFiles": 65392
+    "code": 4551241,
+    "nFiles": 65908
   },
   "commits": {
-    "user": 3813,
-    "total": 7268
+    "user": 3892,
+    "total": 7336
   },
   "tmp-render/chrome-profile-c3446b0bb3224a669026db9cda096037/Default/Top": {
     "nFiles": 4,
@@ -63,10 +63,10 @@
     "code": 0
   },
   "tex": {
-    "nFiles": 1310,
+    "nFiles": 1500,
     "blank": 0,
     "comment": 0,
-    "code": 49756
+    "code": 57768
   },
   "tmp-render/chrome-profile-60f0223416bd4e68aa734f01c26f81fc/Default/Segmentation": {
     "nFiles": 24,
@@ -585,10 +585,10 @@
     "code": 2
   },
   "Python": {
-    "nFiles": 1593,
+    "nFiles": 1721,
     "blank": 0,
     "comment": 0,
-    "code": 231377
+    "code": 238801
   },
   "comp": {
     "nFiles": 171,
@@ -1023,10 +1023,10 @@
     "code": 0
   },
   "ll": {
-    "nFiles": 34,
+    "nFiles": 42,
     "blank": 0,
     "comment": 0,
-    "code": 0
+    "code": 1612
   },
   "tmp-render/chrome-profile-516250fae7274066945b2edb6cc374a4/Default/WebStorage/QuotaManager-journal": {
     "nFiles": 4,
@@ -1233,10 +1233,10 @@
     "code": 0
   },
   "TypeScript": {
-    "nFiles": 2254,
+    "nFiles": 2288,
     "blank": 0,
     "comment": 0,
-    "code": 146788
+    "code": 153158
   },
   "2/src/map": {
     "nFiles": 1,
@@ -2130,7 +2130,7 @@
     "nFiles": 2877,
     "blank": 0,
     "comment": 0,
-    "code": 292058
+    "code": 290680
   },
   "tmp-render/chrome-profile-a7b596b6eaac48beaadc996d3aabe48e/Default/discount_infos_db/LOCK": {
     "nFiles": 4,
@@ -2241,10 +2241,10 @@
     "code": 2
   },
   "Java": {
-    "nFiles": 31660,
+    "nFiles": 31780,
     "blank": 0,
     "comment": 0,
-    "code": 2889219
+    "code": 2896967
   },
   "tmp-render/chrome-profile-a7b596b6eaac48beaadc996d3aabe48e/Default/shared_proto_db/LOCK": {
     "nFiles": 4,
@@ -3837,10 +3837,10 @@
     "code": 0
   },
   "gitignore": {
-    "nFiles": 231,
+    "nFiles": 237,
     "blank": 0,
     "comment": 0,
-    "code": 4023
+    "code": 4105
   },
   "tmp-render/chrome-profile-a7b596b6eaac48beaadc996d3aabe48e/Default/LOCK": {
     "nFiles": 4,
@@ -5247,10 +5247,10 @@
     "code": 2
   },
   "C++": {
-    "nFiles": 73,
+    "nFiles": 75,
     "blank": 0,
     "comment": 0,
-    "code": 3502
+    "code": 3874
   },
   "tmp-render/chrome-profile-522c51cb812e48adb0495e544466a34b/Default/Shared": {
     "nFiles": 4,
@@ -8115,10 +8115,10 @@
     "code": 6
   },
   "ps1": {
-    "nFiles": 209,
+    "nFiles": 217,
     "blank": 0,
     "comment": 0,
-    "code": 10080
+    "code": 10250
   },
   "tmp-render/chrome-profile-c3446b0bb3224a669026db9cda096037/Default/commerce_subscription_db/LOG": {
     "nFiles": 4,
@@ -8787,10 +8787,10 @@
     "code": 0
   },
   "Bourne Shell": {
-    "nFiles": 184,
+    "nFiles": 202,
     "blank": 0,
     "comment": 0,
-    "code": 12624
+    "code": 12762
   },
   "db-journal": {
     "nFiles": 200,
@@ -9471,9 +9471,9 @@
     "code": 0
   },
   "chktexrc": {
-    "nFiles": 6,
+    "nFiles": 8,
     "blank": 0,
     "comment": 0,
-    "code": 174
+    "code": 176
   }
 }
