@@ -1,18 +1,18 @@
 {
   "header": {
     "cloc_version": "git-stats-1.0",
-    "generated_at": "2026-09-27 04:11:19",
+    "generated_at": "2026-10-04 04:46:36",
     "report_source": "git log --numstat"
   },
   "SUM": {
     "blank": 0,
     "comment": 0,
-    "code": 4551241,
-    "nFiles": 65908
+    "code": 4670882,
+    "nFiles": 62979
   },
   "commits": {
-    "user": 3892,
-    "total": 7336
+    "user": 2691,
+    "total": 6134
   },
   "tmp-render/chrome-profile-c3446b0bb3224a669026db9cda096037/Default/Top": {
     "nFiles": 4,
@@ -63,10 +63,10 @@
     "code": 0
   },
   "tex": {
-    "nFiles": 1500,
+    "nFiles": 1636,
     "blank": 0,
     "comment": 0,
-    "code": 57768
+    "code": 59444
   },
   "tmp-render/chrome-profile-60f0223416bd4e68aa734f01c26f81fc/Default/Segmentation": {
     "nFiles": 24,
@@ -585,16 +585,10 @@
     "code": 2
   },
   "Python": {
-    "nFiles": 1721,
+    "nFiles": 2617,
     "blank": 0,
     "comment": 0,
-    "code": 238801
-  },
-  "comp": {
-    "nFiles": 171,
-    "blank": 0,
-    "comment": 0,
-    "code": 2861
+    "code": 400773
   },
   "tmp-render/chrome-profile-1f4a448ea0fd4e869bf4364f83126a8d/Default/parcel_tracking_db/LOCK": {
     "nFiles": 4,
@@ -663,10 +657,10 @@
     "code": 2
   },
   "vsh": {
-    "nFiles": 553,
+    "nFiles": 527,
     "blank": 0,
     "comment": 0,
-    "code": 2125
+    "code": 1994
   },
   "tmp-render/chrome-profile-f07652f0639a4a94ac64d260a4c5ae42/Default/Secure": {
     "nFiles": 4,
@@ -753,10 +747,10 @@
     "code": 6
   },
   "kts": {
-    "nFiles": 10,
+    "nFiles": 12,
     "blank": 0,
     "comment": 0,
-    "code": 298
+    "code": 324
   },
   "tmp-render/chrome-profile-93e47d660f644158849870278b9bd82e/Crashpad/metadata": {
     "nFiles": 4,
@@ -825,10 +819,10 @@
     "code": 44272
   },
   "MF": {
-    "nFiles": 28,
+    "nFiles": 30,
     "blank": 0,
     "comment": 0,
-    "code": 89
+    "code": 95
   },
   "tmp-render/chrome-profile-b996b7db1b6a461682410c946862f5c2/Default/shared_proto_db/metadata/LOG": {
     "nFiles": 4,
@@ -877,6 +871,12 @@
     "blank": 0,
     "comment": 0,
     "code": 2
+  },
+  "env": {
+    "nFiles": 2,
+    "blank": 0,
+    "comment": 0,
+    "code": 14
   },
   "tmp-render/chrome-profile/Default/ClientCertificates/LOCK": {
     "nFiles": 4,
@@ -1161,7 +1161,7 @@
     "code": 2
   },
   "lp": {
-    "nFiles": 22,
+    "nFiles": 44,
     "blank": 0,
     "comment": 0,
     "code": 288
@@ -1233,10 +1233,10 @@
     "code": 0
   },
   "TypeScript": {
-    "nFiles": 2288,
+    "nFiles": 2439,
     "blank": 0,
     "comment": 0,
-    "code": 153158
+    "code": 156169
   },
   "2/src/map": {
     "nFiles": 1,
@@ -1455,10 +1455,10 @@
     "code": 0
   },
   "conf": {
-    "nFiles": 16,
+    "nFiles": 34,
     "blank": 0,
     "comment": 0,
-    "code": 290
+    "code": 728
   },
   "tmp-render/chrome-profile-522c51cb812e48adb0495e544466a34b/Default/Account": {
     "nFiles": 4,
@@ -1569,10 +1569,10 @@
     "code": 2
   },
   "in": {
-    "nFiles": 16,
+    "nFiles": 20,
     "blank": 0,
     "comment": 0,
-    "code": 366
+    "code": 404
   },
   "tmp-render/chrome-profile-7043b166330447de90a75abd3efc0065/Last": {
     "nFiles": 4,
@@ -1779,10 +1779,10 @@
     "code": 18
   },
   "glsl": {
-    "nFiles": 2717,
+    "nFiles": 2536,
     "blank": 0,
     "comment": 0,
-    "code": 122685
+    "code": 120731
   },
   "tmp-render/chrome-profile-1f4a448ea0fd4e869bf4364f83126a8d/Default/Preferences": {
     "nFiles": 4,
@@ -2127,10 +2127,10 @@
     "code": 4
   },
   "JavaScript": {
-    "nFiles": 2877,
+    "nFiles": 2909,
     "blank": 0,
     "comment": 0,
-    "code": 290680
+    "code": 291779
   },
   "tmp-render/chrome-profile-a7b596b6eaac48beaadc996d3aabe48e/Default/discount_infos_db/LOCK": {
     "nFiles": 4,
@@ -2241,10 +2241,10 @@
     "code": 2
   },
   "Java": {
-    "nFiles": 31780,
+    "nFiles": 28261,
     "blank": 0,
     "comment": 0,
-    "code": 2896967
+    "code": 2854750
   },
   "tmp-render/chrome-profile-a7b596b6eaac48beaadc996d3aabe48e/Default/shared_proto_db/LOCK": {
     "nFiles": 4,
@@ -2527,6 +2527,12 @@
     "blank": 0,
     "comment": 0,
     "code": 0
+  },
+  "editorconfig": {
+    "nFiles": 2,
+    "blank": 0,
+    "comment": 0,
+    "code": 40
   },
   "tmp-render/chrome-profile-1b75955ad0804183a99f2edba619aae7/Default/Top": {
     "nFiles": 4,
@@ -3123,10 +3129,10 @@
     "code": 0
   },
   "C": {
-    "nFiles": 123,
+    "nFiles": 125,
     "blank": 0,
     "comment": 0,
-    "code": 5354
+    "code": 5370
   },
   "tmp-render/chrome-profile-a06b529f3bd44a55b543a47fd548077e/Default/discounts_db/LOG": {
     "nFiles": 4,
@@ -3403,12 +3409,6 @@
     "blank": 0,
     "comment": 0,
     "code": 2
-  },
-  "accesswidener": {
-    "nFiles": 28,
-    "blank": 0,
-    "comment": 0,
-    "code": 93
   },
   "tmp-render/chrome-profile-f07652f0639a4a94ac64d260a4c5ae42/Default/shared_proto_db/CURRENT": {
     "nFiles": 4,
@@ -3837,10 +3837,10 @@
     "code": 0
   },
   "gitignore": {
-    "nFiles": 237,
+    "nFiles": 247,
     "blank": 0,
     "comment": 0,
-    "code": 4105
+    "code": 4219
   },
   "tmp-render/chrome-profile-a7b596b6eaac48beaadc996d3aabe48e/Default/LOCK": {
     "nFiles": 4,
@@ -3861,10 +3861,10 @@
     "code": 0
   },
   "csv": {
-    "nFiles": 44,
+    "nFiles": 46,
     "blank": 0,
     "comment": 0,
-    "code": 26806
+    "code": 27314
   },
   "tmp-render/chrome-profile/Default/Secure": {
     "nFiles": 4,
@@ -3943,12 +3943,6 @@
     "blank": 0,
     "comment": 0,
     "code": 0
-  },
-  "vert": {
-    "nFiles": 115,
-    "blank": 0,
-    "comment": 0,
-    "code": 1316
   },
   "tmp-render/chrome-profile-7984088a000a417db0be9c7c426ac064/Default/Network/Reporting": {
     "nFiles": 4,
@@ -4947,10 +4941,10 @@
     "code": 0
   },
   "bat": {
-    "nFiles": 57,
+    "nFiles": 55,
     "blank": 0,
     "comment": 0,
-    "code": 2419
+    "code": 2314
   },
   "tmp-render/chrome-profile-8fe1e67837324cdd9e074e9595a9b7e5/Default/Segmentation": {
     "nFiles": 24,
@@ -5637,10 +5631,10 @@
     "code": 28
   },
   "service": {
-    "nFiles": 34,
+    "nFiles": 37,
     "blank": 0,
     "comment": 0,
-    "code": 594
+    "code": 598
   },
   "tmp-render/chrome-profile/Default/LOG": {
     "nFiles": 4,
@@ -5727,10 +5721,10 @@
     "code": 0
   },
   "cmd": {
-    "nFiles": 3,
+    "nFiles": 11,
     "blank": 0,
     "comment": 0,
-    "code": 17
+    "code": 57
   },
   "tmp-render/chrome-profile/Default/Network/Trust": {
     "nFiles": 4,
@@ -5841,7 +5835,7 @@
     "code": 4
   },
   "bib": {
-    "nFiles": 4,
+    "nFiles": 6,
     "blank": 0,
     "comment": 0,
     "code": 598
@@ -6459,10 +6453,10 @@
     "code": 0
   },
   "gradle": {
-    "nFiles": 189,
+    "nFiles": 68,
     "blank": 0,
     "comment": 0,
-    "code": 4390
+    "code": 3653
   },
   "tmp-render/chrome-profile-f07652f0639a4a94ac64d260a4c5ae42/Default/AutofillAiModelCache/LOCK": {
     "nFiles": 4,
@@ -6986,12 +6980,6 @@
     "comment": 0,
     "code": 0
   },
-  "mesh": {
-    "nFiles": 6,
-    "blank": 0,
-    "comment": 0,
-    "code": 455
-  },
   "tmp-render/chrome-profile-93e47d660f644158849870278b9bd82e/Default/discounts_db/LOCK": {
     "nFiles": 4,
     "blank": 0,
@@ -7131,16 +7119,10 @@
     "code": 0
   },
   "iml": {
-    "nFiles": 80,
+    "nFiles": 79,
     "blank": 0,
     "comment": 0,
-    "code": 954
-  },
-  "task": {
-    "nFiles": 5,
-    "blank": 0,
-    "comment": 0,
-    "code": 167
+    "code": 946
   },
   "tmp-render/chrome-profile-516250fae7274066945b2edb6cc374a4/Default/shared_proto_db/LOCK": {
     "nFiles": 4,
@@ -7209,10 +7191,10 @@
     "code": 0
   },
   "frag": {
-    "nFiles": 138,
+    "nFiles": 42,
     "blank": 0,
     "comment": 0,
-    "code": 1200
+    "code": 525
   },
   "tmp-render/chrome-profile-1bcdfbdc0ee644f69c3d14735b9f6220/Default/Segmentation": {
     "nFiles": 24,
@@ -7755,7 +7737,7 @@
     "code": 0
   },
   "qubo": {
-    "nFiles": 2,
+    "nFiles": 4,
     "blank": 0,
     "comment": 0,
     "code": 22
@@ -8115,10 +8097,10 @@
     "code": 6
   },
   "ps1": {
-    "nFiles": 217,
+    "nFiles": 250,
     "blank": 0,
     "comment": 0,
-    "code": 10250
+    "code": 11166
   },
   "tmp-render/chrome-profile-c3446b0bb3224a669026db9cda096037/Default/commerce_subscription_db/LOG": {
     "nFiles": 4,
@@ -8787,10 +8769,10 @@
     "code": 0
   },
   "Bourne Shell": {
-    "nFiles": 202,
+    "nFiles": 218,
     "blank": 0,
     "comment": 0,
-    "code": 12762
+    "code": 13024
   },
   "db-journal": {
     "nFiles": 200,
@@ -8835,10 +8817,10 @@
     "code": 0
   },
   "gitattributes": {
-    "nFiles": 31,
+    "nFiles": 36,
     "blank": 0,
     "comment": 0,
-    "code": 89
+    "code": 147
   },
   "tmp-render/chrome-profile/Breadcrumbs": {
     "nFiles": 4,
@@ -9147,10 +9129,10 @@
     "code": 1242
   },
   "example": {
-    "nFiles": 62,
+    "nFiles": 76,
     "blank": 0,
     "comment": 0,
-    "code": 568
+    "code": 762
   },
   "tmp-render/chrome-profile-a7b596b6eaac48beaadc996d3aabe48e/Default/Network/Network": {
     "nFiles": 4,
@@ -9207,10 +9189,10 @@
     "code": 0
   },
   "SQL": {
-    "nFiles": 24,
+    "nFiles": 25,
     "blank": 0,
     "comment": 0,
-    "code": 398
+    "code": 409
   },
   "tmp-render/chrome-profile-a7b596b6eaac48beaadc996d3aabe48e/Default/Local": {
     "nFiles": 12,
@@ -9315,10 +9297,10 @@
     "code": 4
   },
   "fsh": {
-    "nFiles": 1898,
+    "nFiles": 1876,
     "blank": 0,
     "comment": 0,
-    "code": 45696
+    "code": 45624
   },
   "9/src/main/java/{com/github/haedus_industries/calculation/impl": {
     "nFiles": 2,
@@ -9373,12 +9355,6 @@
     "blank": 0,
     "comment": 0,
     "code": 2
-  },
-  "http": {
-    "nFiles": 1,
-    "blank": 0,
-    "comment": 0,
-    "code": 11
   },
   "tmp-render/chrome-profile-93e47d660f644158849870278b9bd82e/Default/BudgetDatabase/LOG": {
     "nFiles": 4,
