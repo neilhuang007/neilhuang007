@@ -1,18 +1,18 @@
 {
   "header": {
     "cloc_version": "git-stats-1.0",
-    "generated_at": "2026-10-04 04:46:36",
+    "generated_at": "2026-10-11 04:32:47",
     "report_source": "git log --numstat"
   },
   "SUM": {
     "blank": 0,
     "comment": 0,
-    "code": 4670882,
-    "nFiles": 62979
+    "code": 4631853,
+    "nFiles": 63056
   },
   "commits": {
-    "user": 2691,
-    "total": 6134
+    "user": 2844,
+    "total": 6268
   },
   "tmp-render/chrome-profile-c3446b0bb3224a669026db9cda096037/Default/Top": {
     "nFiles": 4,
@@ -585,10 +585,10 @@
     "code": 2
   },
   "Python": {
-    "nFiles": 2617,
+    "nFiles": 1871,
     "blank": 0,
     "comment": 0,
-    "code": 400773
+    "code": 331791
   },
   "tmp-render/chrome-profile-1f4a448ea0fd4e869bf4364f83126a8d/Default/parcel_tracking_db/LOCK": {
     "nFiles": 4,
@@ -1160,12 +1160,6 @@
     "comment": 0,
     "code": 2
   },
-  "lp": {
-    "nFiles": 44,
-    "blank": 0,
-    "comment": 0,
-    "code": 288
-  },
   "tmp-render/chrome-profile-be1d796f91174442be03dee9799bcce3/Default/commerce_subscription_db/LOCK": {
     "nFiles": 4,
     "blank": 0,
@@ -1233,10 +1227,10 @@
     "code": 0
   },
   "TypeScript": {
-    "nFiles": 2439,
+    "nFiles": 2975,
     "blank": 0,
     "comment": 0,
-    "code": 156169
+    "code": 172369
   },
   "2/src/map": {
     "nFiles": 1,
@@ -1455,10 +1449,10 @@
     "code": 0
   },
   "conf": {
-    "nFiles": 34,
+    "nFiles": 45,
     "blank": 0,
     "comment": 0,
-    "code": 728
+    "code": 884
   },
   "tmp-render/chrome-profile-522c51cb812e48adb0495e544466a34b/Default/Account": {
     "nFiles": 4,
@@ -1572,7 +1566,7 @@
     "nFiles": 20,
     "blank": 0,
     "comment": 0,
-    "code": 404
+    "code": 438
   },
   "tmp-render/chrome-profile-7043b166330447de90a75abd3efc0065/Last": {
     "nFiles": 4,
@@ -2127,10 +2121,10 @@
     "code": 4
   },
   "JavaScript": {
-    "nFiles": 2909,
+    "nFiles": 2932,
     "blank": 0,
     "comment": 0,
-    "code": 291779
+    "code": 293201
   },
   "tmp-render/chrome-profile-a7b596b6eaac48beaadc996d3aabe48e/Default/discount_infos_db/LOCK": {
     "nFiles": 4,
@@ -2241,10 +2235,10 @@
     "code": 2
   },
   "Java": {
-    "nFiles": 28261,
+    "nFiles": 28468,
     "blank": 0,
     "comment": 0,
-    "code": 2854750
+    "code": 2862284
   },
   "tmp-render/chrome-profile-a7b596b6eaac48beaadc996d3aabe48e/Default/shared_proto_db/LOCK": {
     "nFiles": 4,
@@ -2787,10 +2781,10 @@
     "code": 0
   },
   "C/C++ Header": {
-    "nFiles": 501,
+    "nFiles": 511,
     "blank": 0,
     "comment": 0,
-    "code": 127619
+    "code": 127967
   },
   "tmp-render/chrome-profile-f07652f0639a4a94ac64d260a4c5ae42/Default/BrowsingTopicsState": {
     "nFiles": 4,
@@ -3129,10 +3123,10 @@
     "code": 0
   },
   "C": {
-    "nFiles": 125,
+    "nFiles": 180,
     "blank": 0,
     "comment": 0,
-    "code": 5370
+    "code": 9840
   },
   "tmp-render/chrome-profile-a06b529f3bd44a55b543a47fd548077e/Default/discounts_db/LOG": {
     "nFiles": 4,
@@ -3837,10 +3831,10 @@
     "code": 0
   },
   "gitignore": {
-    "nFiles": 247,
+    "nFiles": 243,
     "blank": 0,
     "comment": 0,
-    "code": 4219
+    "code": 4181
   },
   "tmp-render/chrome-profile-a7b596b6eaac48beaadc996d3aabe48e/Default/LOCK": {
     "nFiles": 4,
@@ -3973,6 +3967,12 @@
     "blank": 0,
     "comment": 0,
     "code": 0
+  },
+  "vert": {
+    "nFiles": 4,
+    "blank": 0,
+    "comment": 0,
+    "code": 40
   },
   "tmp-render/chrome-profile-93e47d660f644158849870278b9bd82e/Default/BudgetDatabase/LOCK": {
     "nFiles": 4,
@@ -5223,10 +5223,10 @@
     "code": 0
   },
   "map": {
-    "nFiles": 518,
+    "nFiles": 520,
     "blank": 0,
     "comment": 0,
-    "code": 174
+    "code": 185
   },
   "tmp-render/chrome-profile-60f0223416bd4e68aa734f01c26f81fc/Default/parcel_tracking_db/LOG": {
     "nFiles": 4,
@@ -5631,10 +5631,10 @@
     "code": 28
   },
   "service": {
-    "nFiles": 37,
+    "nFiles": 38,
     "blank": 0,
     "comment": 0,
-    "code": 598
+    "code": 599
   },
   "tmp-render/chrome-profile/Default/LOG": {
     "nFiles": 4,
@@ -5833,12 +5833,6 @@
     "blank": 0,
     "comment": 0,
     "code": 4
-  },
-  "bib": {
-    "nFiles": 6,
-    "blank": 0,
-    "comment": 0,
-    "code": 598
   },
   "tmp-render/chrome-profile-93e47d660f644158849870278b9bd82e/Default/commerce_subscription_db/LOCK": {
     "nFiles": 4,
@@ -7190,17 +7184,17 @@
     "comment": 0,
     "code": 0
   },
-  "frag": {
-    "nFiles": 42,
-    "blank": 0,
-    "comment": 0,
-    "code": 525
-  },
   "tmp-render/chrome-profile-1bcdfbdc0ee644f69c3d14735b9f6220/Default/Segmentation": {
     "nFiles": 24,
     "blank": 0,
     "comment": 0,
     "code": 0
+  },
+  "frag": {
+    "nFiles": 52,
+    "blank": 0,
+    "comment": 0,
+    "code": 605
   },
   "tmp-render/chrome-profile-93e47d660f644158849870278b9bd82e/Default/optimization_guide_hint_cache_store/LOG": {
     "nFiles": 4,
@@ -7736,12 +7730,6 @@
     "comment": 0,
     "code": 0
   },
-  "qubo": {
-    "nFiles": 4,
-    "blank": 0,
-    "comment": 0,
-    "code": 22
-  },
   "tmp-render/chrome-profile-3fc14c024ee848b781186065a8c27623/Default/optimization_guide_hint_cache_store/LOCK": {
     "nFiles": 4,
     "blank": 0,
@@ -8097,10 +8085,10 @@
     "code": 6
   },
   "ps1": {
-    "nFiles": 250,
+    "nFiles": 255,
     "blank": 0,
     "comment": 0,
-    "code": 11166
+    "code": 11244
   },
   "tmp-render/chrome-profile-c3446b0bb3224a669026db9cda096037/Default/commerce_subscription_db/LOG": {
     "nFiles": 4,
@@ -8769,10 +8757,10 @@
     "code": 0
   },
   "Bourne Shell": {
-    "nFiles": 218,
+    "nFiles": 234,
     "blank": 0,
     "comment": 0,
-    "code": 13024
+    "code": 13457
   },
   "db-journal": {
     "nFiles": 200,
@@ -8817,7 +8805,7 @@
     "code": 0
   },
   "gitattributes": {
-    "nFiles": 36,
+    "nFiles": 32,
     "blank": 0,
     "comment": 0,
     "code": 147
@@ -9129,10 +9117,10 @@
     "code": 1242
   },
   "example": {
-    "nFiles": 76,
+    "nFiles": 80,
     "blank": 0,
     "comment": 0,
-    "code": 762
+    "code": 811
   },
   "tmp-render/chrome-profile-a7b596b6eaac48beaadc996d3aabe48e/Default/Network/Network": {
     "nFiles": 4,
@@ -9189,10 +9177,10 @@
     "code": 0
   },
   "SQL": {
-    "nFiles": 25,
+    "nFiles": 26,
     "blank": 0,
     "comment": 0,
-    "code": 409
+    "code": 452
   },
   "tmp-render/chrome-profile-a7b596b6eaac48beaadc996d3aabe48e/Default/Local": {
     "nFiles": 12,
