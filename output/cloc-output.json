@@ -1,18 +1,18 @@
 {
   "header": {
     "cloc_version": "git-stats-1.0",
-    "generated_at": "2026-10-18 03:30:44",
+    "generated_at": "2026-10-25 03:41:31",
     "report_source": "git log --numstat"
   },
   "SUM": {
     "blank": 0,
     "comment": 0,
-    "code": 7365602,
-    "nFiles": 87438
+    "code": 7747494,
+    "nFiles": 87684
   },
   "commits": {
-    "user": 2937,
-    "total": 6352
+    "user": 2986,
+    "total": 6486
   },
   "tmp-render/chrome-profile-c3446b0bb3224a669026db9cda096037/Default/Top": {
     "nFiles": 4,
@@ -585,10 +585,10 @@
     "code": 2
   },
   "Python": {
-    "nFiles": 2482,
+    "nFiles": 2584,
     "blank": 0,
     "comment": 0,
-    "code": 424204
+    "code": 452436
   },
   "tmp-render/chrome-profile-1f4a448ea0fd4e869bf4364f83126a8d/Default/parcel_tracking_db/LOCK": {
     "nFiles": 4,
@@ -1437,10 +1437,10 @@
     "code": 2
   },
   "cmake": {
-    "nFiles": 16,
+    "nFiles": 18,
     "blank": 0,
     "comment": 0,
-    "code": 510
+    "code": 564
   },
   "tmp-render/chrome-profile-3fc14c024ee848b781186065a8c27623/Default/shared_proto_db/metadata/LOCK": {
     "nFiles": 4,
@@ -2121,10 +2121,10 @@
     "code": 4
   },
   "JavaScript": {
-    "nFiles": 2949,
+    "nFiles": 2960,
     "blank": 0,
     "comment": 0,
-    "code": 294186
+    "code": 294433
   },
   "tmp-render/chrome-profile-a7b596b6eaac48beaadc996d3aabe48e/Default/discount_infos_db/LOCK": {
     "nFiles": 4,
@@ -2235,10 +2235,10 @@
     "code": 2
   },
   "Java": {
-    "nFiles": 51803,
+    "nFiles": 51854,
     "blank": 0,
     "comment": 0,
-    "code": 4944455
+    "code": 4944806
   },
   "tmp-render/chrome-profile-a7b596b6eaac48beaadc996d3aabe48e/Default/shared_proto_db/LOCK": {
     "nFiles": 4,
@@ -2317,6 +2317,12 @@
     "blank": 0,
     "comment": 0,
     "code": 0
+  },
+  "pdf": {
+    "nFiles": 2,
+    "blank": 0,
+    "comment": 0,
+    "code": 3706
   },
   "tmp-render/chrome-profile-7984088a000a417db0be9c7c426ac064/Default/Network": {
     "nFiles": 4,
@@ -2763,10 +2769,10 @@
     "code": 187246
   },
   "geojson": {
-    "nFiles": 8,
+    "nFiles": 16,
     "blank": 0,
     "comment": 0,
-    "code": 8
+    "code": 9936
   },
   "tmp-render/chrome-profile-93e47d660f644158849870278b9bd82e/Default/Segmentation": {
     "nFiles": 24,
@@ -3843,10 +3849,10 @@
     "code": 0
   },
   "gitignore": {
-    "nFiles": 253,
+    "nFiles": 255,
     "blank": 0,
     "comment": 0,
-    "code": 4313
+    "code": 4321
   },
   "tmp-render/chrome-profile-a7b596b6eaac48beaadc996d3aabe48e/Default/LOCK": {
     "nFiles": 4,
@@ -3867,10 +3873,10 @@
     "code": 0
   },
   "csv": {
-    "nFiles": 94,
+    "nFiles": 120,
     "blank": 0,
     "comment": 0,
-    "code": 556864
+    "code": 558092
   },
   "tmp-render/chrome-profile/Default/Secure": {
     "nFiles": 4,
@@ -4712,6 +4718,12 @@
     "comment": 0,
     "code": 516
   },
+  "kml": {
+    "nFiles": 4,
+    "blank": 0,
+    "comment": 0,
+    "code": 4
+  },
   "tmp-render/chrome-profile-522c51cb812e48adb0495e544466a34b/Default/parcel_tracking_db/LOCK": {
     "nFiles": 4,
     "blank": 0,
@@ -5259,10 +5271,10 @@
     "code": 2
   },
   "C++": {
-    "nFiles": 76,
+    "nFiles": 78,
     "blank": 0,
     "comment": 0,
-    "code": 3876
+    "code": 3898
   },
   "tmp-render/chrome-profile-522c51cb812e48adb0495e544466a34b/Default/Shared": {
     "nFiles": 4,
@@ -6872,6 +6884,12 @@
     "comment": 0,
     "code": 0
   },
+  "jsonl": {
+    "nFiles": 10,
+    "blank": 0,
+    "comment": 0,
+    "code": 337844
+  },
   "tmp-render/chrome-profile-8fe1e67837324cdd9e074e9595a9b7e5/Default/BookmarkMergedSurfaceOrdering": {
     "nFiles": 4,
     "blank": 0,
@@ -7207,6 +7225,12 @@
     "blank": 0,
     "comment": 0,
     "code": 0
+  },
+  "mpd": {
+    "nFiles": 2,
+    "blank": 0,
+    "comment": 0,
+    "code": 80
   },
   "tmp-render/chrome-profile-3290a3f876bc4b6b91f0d1a1a0f6bbb1/Default/Safe": {
     "nFiles": 4,
@@ -7633,6 +7657,12 @@
     "blank": 0,
     "comment": 0,
     "code": 0
+  },
+  "mp4": {
+    "nFiles": 12,
+    "blank": 0,
+    "comment": 0,
+    "code": 36
   },
   "tmp-render/chrome-profile-3fc14c024ee848b781186065a8c27623/Default/Shared": {
     "nFiles": 4,
@@ -8793,10 +8823,10 @@
     "code": 0
   },
   "Bourne Shell": {
-    "nFiles": 286,
+    "nFiles": 296,
     "blank": 0,
     "comment": 0,
-    "code": 15599
+    "code": 15723
   },
   "db-journal": {
     "nFiles": 200,
@@ -8841,10 +8871,10 @@
     "code": 0
   },
   "gitattributes": {
-    "nFiles": 36,
+    "nFiles": 38,
     "blank": 0,
     "comment": 0,
-    "code": 165
+    "code": 193
   },
   "tmp-render/chrome-profile/Breadcrumbs": {
     "nFiles": 4,
