@@ -1,18 +1,18 @@
 {
   "header": {
     "cloc_version": "git-stats-1.0",
-    "generated_at": "2026-10-25 03:41:31",
+    "generated_at": "2026-11-01 04:56:08",
     "report_source": "git log --numstat"
   },
   "SUM": {
     "blank": 0,
     "comment": 0,
-    "code": 7747494,
-    "nFiles": 87684
+    "code": 7425714,
+    "nFiles": 85864
   },
   "commits": {
-    "user": 2986,
-    "total": 6486
+    "user": 2992,
+    "total": 6497
   },
   "tmp-render/chrome-profile-c3446b0bb3224a669026db9cda096037/Default/Top": {
     "nFiles": 4,
@@ -585,10 +585,10 @@
     "code": 2
   },
   "Python": {
-    "nFiles": 2584,
+    "nFiles": 2646,
     "blank": 0,
     "comment": 0,
-    "code": 452436
+    "code": 465030
   },
   "tmp-render/chrome-profile-1f4a448ea0fd4e869bf4364f83126a8d/Default/parcel_tracking_db/LOCK": {
     "nFiles": 4,
@@ -657,10 +657,10 @@
     "code": 2
   },
   "vsh": {
-    "nFiles": 527,
+    "nFiles": 511,
     "blank": 0,
     "comment": 0,
-    "code": 1994
+    "code": 1651
   },
   "tmp-render/chrome-profile-f07652f0639a4a94ac64d260a4c5ae42/Default/Secure": {
     "nFiles": 4,
@@ -1563,10 +1563,10 @@
     "code": 2
   },
   "in": {
-    "nFiles": 22,
+    "nFiles": 26,
     "blank": 0,
     "comment": 0,
-    "code": 444
+    "code": 458
   },
   "tmp-render/chrome-profile-7043b166330447de90a75abd3efc0065/Last": {
     "nFiles": 4,
@@ -2121,10 +2121,10 @@
     "code": 4
   },
   "JavaScript": {
-    "nFiles": 2960,
+    "nFiles": 3016,
     "blank": 0,
     "comment": 0,
-    "code": 294433
+    "code": 299129
   },
   "tmp-render/chrome-profile-a7b596b6eaac48beaadc996d3aabe48e/Default/discount_infos_db/LOCK": {
     "nFiles": 4,
@@ -2235,10 +2235,10 @@
     "code": 2
   },
   "Java": {
-    "nFiles": 51854,
+    "nFiles": 49863,
     "blank": 0,
     "comment": 0,
-    "code": 4944806
+    "code": 4581077
   },
   "tmp-render/chrome-profile-a7b596b6eaac48beaadc996d3aabe48e/Default/shared_proto_db/LOCK": {
     "nFiles": 4,
@@ -3849,10 +3849,10 @@
     "code": 0
   },
   "gitignore": {
-    "nFiles": 255,
+    "nFiles": 258,
     "blank": 0,
     "comment": 0,
-    "code": 4321
+    "code": 4360
   },
   "tmp-render/chrome-profile-a7b596b6eaac48beaadc996d3aabe48e/Default/LOCK": {
     "nFiles": 4,
@@ -3873,10 +3873,10 @@
     "code": 0
   },
   "csv": {
-    "nFiles": 120,
+    "nFiles": 182,
     "blank": 0,
     "comment": 0,
-    "code": 558092
+    "code": 576000
   },
   "tmp-render/chrome-profile/Default/Secure": {
     "nFiles": 4,
@@ -6392,6 +6392,12 @@
     "comment": 0,
     "code": 6
   },
+  "fasta": {
+    "nFiles": 26,
+    "blank": 0,
+    "comment": 0,
+    "code": 8320
+  },
   "tmp-render/chrome-profile-b996b7db1b6a461682410c946862f5c2/Default/ServerCertificate-journal": {
     "nFiles": 4,
     "blank": 0,
@@ -8871,10 +8877,10 @@
     "code": 0
   },
   "gitattributes": {
-    "nFiles": 38,
+    "nFiles": 40,
     "blank": 0,
     "comment": 0,
-    "code": 193
+    "code": 197
   },
   "tmp-render/chrome-profile/Breadcrumbs": {
     "nFiles": 4,
@@ -9357,10 +9363,10 @@
     "code": 4
   },
   "fsh": {
-    "nFiles": 1876,
+    "nFiles": 1848,
     "blank": 0,
     "comment": 0,
-    "code": 45624
+    "code": 44341
   },
   "9/src/main/java/{com/github/haedus_industries/calculation/impl": {
     "nFiles": 2,

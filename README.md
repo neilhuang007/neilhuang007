@@ -54,13 +54,13 @@
 ```
 [ LANGUAGES BREAKDOWN ]
 
-Java         --> 4,944,806 lines (63.8%)
-csv          --> 558,092 lines (7.2%)
-Python       --> 452,436 lines (5.8%)
-jsonl        --> 337,844 lines (4.4%)
-JavaScript   --> 294,433 lines (3.8%)
-Others       --> 1,159,883 lines (15.0%)
+Java         --> 4,581,077 lines (61.7%)
+csv          --> 576,000 lines (7.8%)
+Python       --> 465,030 lines (6.3%)
+jsonl        --> 337,844 lines (4.5%)
+JavaScript   --> 299,129 lines (4.0%)
+Others       --> 1,166,634 lines (15.7%)
 
-[ TOTAL LINES OF CODE: 7,747,494 ]
-[ COMMITS: 2,986 personal / 6,486 total (46.0%) ]
+[ TOTAL LINES OF CODE: 7,425,714 ]
+[ COMMITS: 2,992 personal / 6,497 total (46.1%) ]
 ```
