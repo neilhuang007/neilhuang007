@@ -1,18 +1,18 @@
 {
   "header": {
     "cloc_version": "git-stats-1.0",
-    "generated_at": "2026-11-15 05:19:27",
+    "generated_at": "2026-11-22 05:37:32",
     "report_source": "git log --numstat"
   },
   "SUM": {
     "blank": 0,
     "comment": 0,
-    "code": 6794859,
-    "nFiles": 76486
+    "code": 6543356,
+    "nFiles": 73886
   },
   "commits": {
-    "user": 2802,
-    "total": 6445
+    "user": 2778,
+    "total": 6427
   },
   "tmp-render/chrome-profile-c3446b0bb3224a669026db9cda096037/Default/Top": {
     "nFiles": 4,
@@ -63,10 +63,10 @@
     "code": 0
   },
   "tex": {
-    "nFiles": 1672,
+    "nFiles": 1674,
     "blank": 0,
     "comment": 0,
-    "code": 60784
+    "code": 60892
   },
   "tmp-render/chrome-profile-60f0223416bd4e68aa734f01c26f81fc/Default/Segmentation": {
     "nFiles": 24,
@@ -585,10 +585,10 @@
     "code": 2
   },
   "Python": {
-    "nFiles": 2626,
+    "nFiles": 2657,
     "blank": 0,
     "comment": 0,
-    "code": 467002
+    "code": 469474
   },
   "tmp-render/chrome-profile-1f4a448ea0fd4e869bf4364f83126a8d/Default/parcel_tracking_db/LOCK": {
     "nFiles": 4,
@@ -657,10 +657,10 @@
     "code": 2
   },
   "vsh": {
-    "nFiles": 71,
+    "nFiles": 57,
     "blank": 0,
     "comment": 0,
-    "code": 875
+    "code": 640
   },
   "tmp-render/chrome-profile-f07652f0639a4a94ac64d260a4c5ae42/Default/Secure": {
     "nFiles": 4,
@@ -1029,10 +1029,10 @@
     "code": 0
   },
   "ll": {
-    "nFiles": 42,
+    "nFiles": 43,
     "blank": 0,
     "comment": 0,
-    "code": 1612
+    "code": 1664
   },
   "tmp-render/chrome-profile-516250fae7274066945b2edb6cc374a4/Default/WebStorage/QuotaManager-journal": {
     "nFiles": 4,
@@ -1233,10 +1233,10 @@
     "code": 0
   },
   "TypeScript": {
-    "nFiles": 3056,
+    "nFiles": 3065,
     "blank": 0,
     "comment": 0,
-    "code": 175785
+    "code": 175936
   },
   "2/src/map": {
     "nFiles": 1,
@@ -1443,10 +1443,10 @@
     "code": 2
   },
   "cmake": {
-    "nFiles": 18,
+    "nFiles": 19,
     "blank": 0,
     "comment": 0,
-    "code": 564
+    "code": 604
   },
   "tmp-render/chrome-profile-3fc14c024ee848b781186065a8c27623/Default/shared_proto_db/metadata/LOCK": {
     "nFiles": 4,
@@ -1683,7 +1683,7 @@
     "code": 0
   },
   "ttf": {
-    "nFiles": 125,
+    "nFiles": 96,
     "blank": 0,
     "comment": 0,
     "code": 0
@@ -1779,10 +1779,10 @@
     "code": 18
   },
   "glsl": {
-    "nFiles": 32,
+    "nFiles": 17,
     "blank": 0,
     "comment": 0,
-    "code": 957
+    "code": 319
   },
   "tmp-render/chrome-profile-1f4a448ea0fd4e869bf4364f83126a8d/Default/Preferences": {
     "nFiles": 4,
@@ -1791,7 +1791,7 @@
     "code": 2
   },
   "db": {
-    "nFiles": 99,
+    "nFiles": 92,
     "blank": 0,
     "comment": 0,
     "code": 0
@@ -1864,12 +1864,6 @@
   },
   "tmp-render/chrome-profile-1f4a448ea0fd4e869bf4364f83126a8d/Default/commerce_subscription_db/LOG": {
     "nFiles": 4,
-    "blank": 0,
-    "comment": 0,
-    "code": 0
-  },
-  "DS_Store": {
-    "nFiles": 1,
     "blank": 0,
     "comment": 0,
     "code": 0
@@ -2127,10 +2121,10 @@
     "code": 4
   },
   "JavaScript": {
-    "nFiles": 3060,
+    "nFiles": 3062,
     "blank": 0,
     "comment": 0,
-    "code": 307939
+    "code": 308011
   },
   "tmp-render/chrome-profile-a7b596b6eaac48beaadc996d3aabe48e/Default/discount_infos_db/LOCK": {
     "nFiles": 4,
@@ -2241,10 +2235,10 @@
     "code": 2
   },
   "Java": {
-    "nFiles": 47937,
+    "nFiles": 45470,
     "blank": 0,
     "comment": 0,
-    "code": 4486715
+    "code": 4096343
   },
   "tmp-render/chrome-profile-a7b596b6eaac48beaadc996d3aabe48e/Default/shared_proto_db/LOCK": {
     "nFiles": 4,
@@ -2744,12 +2738,6 @@
     "comment": 0,
     "code": 4
   },
-  "sfk": {
-    "nFiles": 12,
-    "blank": 0,
-    "comment": 0,
-    "code": 0
-  },
   "tmp-render/chrome-profile-7043b166330447de90a75abd3efc0065/Default/Favicons-journal": {
     "nFiles": 4,
     "blank": 0,
@@ -2787,10 +2775,10 @@
     "code": 0
   },
   "C/C++ Header": {
-    "nFiles": 519,
+    "nFiles": 523,
     "blank": 0,
     "comment": 0,
-    "code": 128118
+    "code": 128148
   },
   "tmp-render/chrome-profile-f07652f0639a4a94ac64d260a4c5ae42/Default/BrowsingTopicsState": {
     "nFiles": 4,
@@ -3825,10 +3813,10 @@
     "code": 0
   },
   "gitignore": {
-    "nFiles": 248,
+    "nFiles": 247,
     "blank": 0,
     "comment": 0,
-    "code": 4264
+    "code": 4253
   },
   "tmp-render/chrome-profile-a7b596b6eaac48beaadc996d3aabe48e/Default/LOCK": {
     "nFiles": 4,
@@ -3849,10 +3837,10 @@
     "code": 0
   },
   "csv": {
-    "nFiles": 182,
+    "nFiles": 328,
     "blank": 0,
     "comment": 0,
-    "code": 576000
+    "code": 713788
   },
   "tmp-render/chrome-profile/Default/Secure": {
     "nFiles": 4,
@@ -5241,10 +5229,10 @@
     "code": 2
   },
   "C++": {
-    "nFiles": 106,
+    "nFiles": 114,
     "blank": 0,
     "comment": 0,
-    "code": 4422
+    "code": 5078
   },
   "tmp-render/chrome-profile-522c51cb812e48adb0495e544466a34b/Default/Shared": {
     "nFiles": 4,
@@ -6057,10 +6045,10 @@
     "code": 6
   },
   "inc": {
-    "nFiles": 7,
+    "nFiles": 8,
     "blank": 0,
     "comment": 0,
-    "code": 152
+    "code": 154
   },
   "tmp-render/chrome-profile-6e1672428e3a4f02af05d148a4ab8160/Default/shared_proto_db/metadata/CURRENT": {
     "nFiles": 4,
@@ -6369,10 +6357,10 @@
     "code": 6
   },
   "fasta": {
-    "nFiles": 26,
+    "nFiles": 90,
     "blank": 0,
     "comment": 0,
-    "code": 8320
+    "code": 8528
   },
   "tmp-render/chrome-profile-b996b7db1b6a461682410c946862f5c2/Default/ServerCertificate-journal": {
     "nFiles": 4,
@@ -6795,7 +6783,7 @@
     "code": 0
   },
   "jpg": {
-    "nFiles": 8,
+    "nFiles": 2,
     "blank": 0,
     "comment": 0,
     "code": 0
@@ -7119,10 +7107,10 @@
     "code": 6
   },
   "INI": {
-    "nFiles": 39,
+    "nFiles": 36,
     "blank": 0,
     "comment": 0,
-    "code": 1243
+    "code": 1160
   },
   "tmp-render/chrome-profile-1f4a448ea0fd4e869bf4364f83126a8d/Default/discount_infos_db/LOG": {
     "nFiles": 4,
@@ -7143,10 +7131,10 @@
     "code": 0
   },
   "iml": {
-    "nFiles": 61,
+    "nFiles": 56,
     "blank": 0,
     "comment": 0,
-    "code": 800
+    "code": 703
   },
   "tmp-render/chrome-profile-516250fae7274066945b2edb6cc374a4/Default/shared_proto_db/LOCK": {
     "nFiles": 4,
@@ -7227,10 +7215,10 @@
     "code": 0
   },
   "frag": {
-    "nFiles": 62,
+    "nFiles": 41,
     "blank": 0,
     "comment": 0,
-    "code": 1715
+    "code": 1365
   },
   "tmp-render/chrome-profile-93e47d660f644158849870278b9bd82e/Default/optimization_guide_hint_cache_store/LOG": {
     "nFiles": 4,
@@ -7713,10 +7701,10 @@
     "code": 0
   },
   "png": {
-    "nFiles": 3911,
+    "nFiles": 3763,
     "blank": 0,
     "comment": 0,
-    "code": 15
+    "code": 9
   },
   "tmp-render/chrome-profile-be1d796f91174442be03dee9799bcce3/Default/Shared": {
     "nFiles": 4,
@@ -9321,10 +9309,10 @@
     "code": 4
   },
   "fsh": {
-    "nFiles": 168,
+    "nFiles": 140,
     "blank": 0,
     "comment": 0,
-    "code": 5145
+    "code": 3855
   },
   "9/src/main/java/{com/github/haedus_industries/calculation/impl": {
     "nFiles": 2,
@@ -9345,7 +9333,7 @@
     "code": 2
   },
   "ogg": {
-    "nFiles": 122,
+    "nFiles": 10,
     "blank": 0,
     "comment": 0,
     "code": 0
